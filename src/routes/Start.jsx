@@ -1,8 +1,13 @@
 import React from 'react'
+import { SignInButton } from '../components/SignInButton'
 
 function Start() {
     return (
-        <div>Start</div>
+        <div>
+            <h1>Chelsea International Hostel</h1>
+            <SignInButton />
+
+        </div>
     )
 }
 
