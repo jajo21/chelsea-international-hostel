@@ -10,6 +10,7 @@ function Navbar() {
         <i className="fa fa-fw fa-home"></i>Hem
       </NavLink>
       <NavLink to="/climate" className="navbar-item">
+        <i className="fa-solid fa-temperature-high"></i>
         Klimatöversikt
       </NavLink>
       <SignOutButton className="navbar-item" />
