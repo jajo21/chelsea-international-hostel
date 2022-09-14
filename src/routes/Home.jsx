@@ -14,7 +14,9 @@ function Home() {
         <h2>Välkommen "användare"!</h2>
         <br />
         <h2>Dina klimatanläggningar</h2>
+        <br />
         <button
+          className="climatebtn"
           onClick={() => {
             navigate("/climate");
           }}

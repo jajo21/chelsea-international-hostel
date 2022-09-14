@@ -15,9 +15,10 @@ export const SignOutButton = () => {
   const { instance } = useMsal();
 
   return (
-    <div className="signoutButton">
-      <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" />
-      <button onClick={() => handleLogout(instance)}>Logga ut</button>
+    <div>
+      <button className="signoutButton" onClick={() => handleLogout(instance)}>
+        Logga ut
+      </button>
     </div>
   );
 };

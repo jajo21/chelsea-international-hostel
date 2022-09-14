@@ -20,3 +20,17 @@ img {
 h2 {
     text-align: center;
 }
+
+.climatebtn {
+    justify-content: center;
+    display: grid;
+    margin: auto;
+    padding: 15;
+}
+
+.signoutButton {
+    justify-content: center;
+    display: grid;
+    margin: auto;
+    padding: 10;
+}
