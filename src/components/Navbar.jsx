@@ -1,13 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { SignOutButton } from './SignOutButton';
+import './navbar.css';
 
 function Navbar() {
     return (
         <nav className='navbar'>
-            <NavLink to="/">Hem</NavLink>
-            <NavLink to="/climate">Klimatöversikt</NavLink>
-            <SignOutButton />
+            <NavLink to="/" className="navbar-item">Hem</NavLink>
+            <NavLink to="/climate" className="navbar-item">Klimatöversikt</NavLink>
+            <SignOutButton className="navbar-item" />
         </nav>
     )
 }
