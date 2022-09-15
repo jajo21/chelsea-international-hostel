@@ -5,9 +5,8 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import { PublicClientApplication } from '@azure/msal-browser';
-import { MsalProvider, useIsAuthenticated } from '@azure/msal-react';
-import { msalConfig } from './auth/authConfig';
+import { useIsAuthenticated } from '@azure/msal-react';
+import AuthUser from './components/AuthUser';
 
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
@@ -32,15 +31,13 @@ function App() {
     )
 }
 
-const msalInstance = new PublicClientApplication(msalConfig);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <HashRouter>
-            <MsalProvider instance={msalInstance}>
+            <AuthUser>
                 <App />
-            </MsalProvider>
+            </AuthUser>
         </HashRouter>
     </React.StrictMode>
 )
