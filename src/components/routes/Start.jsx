@@ -3,6 +3,7 @@ import { useMsal } from "@azure/msal-react";
 import { handleLogin } from "../../data/auth/handleAuth";
 import Button from "../Button";
 import logo from "../../img/logo.png";
+import "../css/start.css";
 
 function Start() {
   const { instance } = useMsal();

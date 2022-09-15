@@ -4,35 +4,6 @@
     padding: 0;
 }
 
-.start {
-    margin: auto;
-    text-align: center;
-}
-
-img {
-    display: block;
-    width: 50%;
-    height: 50%;
-    margin: 70;
-    margin-left: 300;
-}
-
-h2 {
-    text-align: center;
-}
-
-.climatebtn {
-    justify-content: center;
-    display: grid;
-    margin: auto;
-    padding: 15;
-    cursor: pointer;
-}
-
-.climatebtn:hover {
-    background-color: #fff;
-}
-
 .signoutButton {
     justify-content: center;
     display: grid;
