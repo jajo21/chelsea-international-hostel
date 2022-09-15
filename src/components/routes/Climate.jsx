@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useIsAuthenticated, useMsal } from "@azure/msal-react";
-/* import { callSmarthut } from '../../data/signalr/negotiate';
-import { initializeSignalRConnection } from '../../data/signalr/connectionSignalR'; */
-import { getBuilding, getBuildingDevices } from "../../data/api/getDevices";
-import { aquireToken } from "../../data/auth/handleAuth";
+import { callSmarthut } from '../../data/signalr/negotiate';
+import { initializeSignalRConnection } from '../../data/signalr/connectionSignalR';
+import { getMyBuilding } from '../../data/api/getDevices';
+import { loginRequest } from '../../data/auth/authConfig';
+import { aquireToken } from '../../data/auth/handleAuth';
+import { getBuilding } from '../../data/api/getDevices';
+import { getBuildingDevices } from '../../data/api/getDevices';
+import Room from '../room/Room';
+import "./climate.css";
 
 function Climate() {
   const isAuthenticated = useIsAuthenticated();
@@ -39,21 +44,26 @@ function Climate() {
             }
         }, [isAuthenticated, negotiateToken, negotiateUrl]); */
 
-  return (
-    <div>
-      <h1>Climate</h1>
-      <div className="devices">
-        {devices &&
-          devices.map((device) => {
-            return (
-              <div key={device.id} className="device">
-                <h2>{device.name}</h2>
-              </div>
-            );
-          })}
-      </div>
-    </div>
-  );
+
+
+    return (
+        <div>
+            <h1>Climate</h1>
+
+            <div className='rooms'>
+                {devices && devices.map(device => {
+                    return (
+                        <Room
+                            key={device.id}
+                            name={device.name}
+                            temperature={device.maxValue}
+                        />
+                    )
+                })}
+
+            </div>
+        </div>
+    )
 }
 
 export default Climate;

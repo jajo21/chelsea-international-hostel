@@ -1,9 +1,12 @@
 import React from "react";
-import { SignInButton } from "../SignInButton";
+import { useMsal } from "@azure/msal-react";
+import { handleLogin } from "../../data/auth/handleAuth";
+import Button from "../Button";
 import logo from "../../img/logo.png";
 import "../css/start.css";
 
 function Start() {
+  const { instance } = useMsal();
   return (
     <>
       <div className="logoContainer">
@@ -14,7 +17,7 @@ function Start() {
         <h2>Välkommen!</h2>
         <br />
         <h2>Logga in för att ta dig vidare</h2>
-        <SignInButton />
+        <Button onClick={() => handleLogin(instance)}>Logga in</Button>
       </div>
     </>
   );

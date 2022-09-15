@@ -7,7 +7,7 @@ export function handleLogin(instance) {
 }
 
 export function handleLogout(instance) {
-    instance.loginRedirect().catch((e) => {
+    instance.logoutRedirect().catch(e => {
         console.error(e);
     });
 }

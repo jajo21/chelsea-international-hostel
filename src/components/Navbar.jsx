@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { SignOutButton } from "./SignOutButton";
+import { useMsal } from "@azure/msal-react";
+import { handleLogout } from "../data/auth/handleAuth";
+import Button from "./Button";
 import "./navbar.css";
 
 function Navbar() {
+  const { instance } = useMsal();
   return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-item">
@@ -13,7 +16,7 @@ function Navbar() {
         <i className="fa-solid fa-temperature-high"></i>
         Klimatöversikt
       </NavLink>
-      <SignOutButton className="navbar-item" />
+      <Button onClick={() => handleLogout(instance)} className="navbar-item">Logga ut</Button>
     </nav>
   );
 }
