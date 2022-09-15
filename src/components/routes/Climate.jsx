@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useIsAuthenticated, useMsal } from "@azure/msal-react";
-import { callSmarthut } from '../negotiate';
-import { initializeSignalRConnection } from '../connectionSignalR';
-import { getMyBuilding } from '../getDevices';
-import { loginRequest } from '../auth/authConfig';
+import { callSmarthut } from '../../data/signalr/negotiate';
+import { initializeSignalRConnection } from '../../data/signalr/connectionSignalR';
+import { getMyBuilding } from '../../data/api/getDevices';
+import { loginRequest } from '../../data/auth/authConfig';
 
 function Climate() {
     const isAuthenticated = useIsAuthenticated();
@@ -21,6 +21,7 @@ function Climate() {
             };
 
             instance.acquireTokenSilent(request).then((response) => {
+                console.log(response);
                 getMyBuilding(response.accessToken).then(res => {
                     console.log(res);
                 })

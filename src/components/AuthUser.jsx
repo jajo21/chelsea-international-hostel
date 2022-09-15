@@ -1,7 +1,7 @@
 import React from 'react';
 import { MsalProvider } from '@azure/msal-react';
 import { PublicClientApplication } from '@azure/msal-browser';
-import { authUserConfig } from '../auth/authConfig';
+import { authUserConfig } from '../data/auth/authConfig';
 
 const userInstance = new PublicClientApplication(authUserConfig);
 
