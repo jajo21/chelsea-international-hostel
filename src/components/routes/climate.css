@@ -1,21 +1,4 @@
-* {
-    box-sizing: border-box;
-}
-
-.flexbox {
+.rooms {
     display: flex;
     flex-wrap: wrap;
-    
-}
-
-.flexbox>div {
-    
-    padding: 10px;
-    height: 100px;
-    
-
-}
-
-.rooms{
-    
 }

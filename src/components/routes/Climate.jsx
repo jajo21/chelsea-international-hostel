@@ -48,18 +48,15 @@ function Climate() {
     return (
         <div>
             <h1>Climate</h1>
-            <div className='flexbox'>
-                <div className='rooms'><Room /></div>
-                <div className='rooms'><Room /></div>
-                <div className='rooms'><Room /></div>
-                <div className='rooms'><Room /></div>
-            </div>
-            <div className='devices'>
+
+            <div className='rooms'>
                 {devices && devices.map(device => {
                     return (
-                        <div key={device.id} className='device'>
-                            <h2>{device.name}</h2>
-                        </div>
+                        <Room
+                            key={device.id}
+                            name={device.name}
+                            temperature={device.maxValue}
+                        />
                     )
                 })}
 
