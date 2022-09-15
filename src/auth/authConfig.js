@@ -1,4 +1,4 @@
-export const msalConfig = {
+export const authUserConfig = {
     auth: {
         clientId: "86c88538-2e16-46d1-b3f4-e26cd8d8eabc",
         authority: "https://login.microsoftonline.com/9bfa1706-1ffc-494d-a63e-dbbb34c4796b", // This is a URL (e.g. https://login.microsoftonline.com/{your tenant ID})
