@@ -1,6 +1,6 @@
 import React from "react";
 import { useMsal } from "@azure/msal-react";
-import { handleLogout } from "../auth/handleAuth";
+import { handleLogout } from "../data/auth/handleAuth";
 
 export const SignOutButton = () => {
   const { instance } = useMsal();

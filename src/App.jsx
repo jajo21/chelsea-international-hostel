@@ -9,9 +9,9 @@ import { useIsAuthenticated } from '@azure/msal-react';
 import AuthUser from './components/AuthUser';
 
 import Navbar from './components/Navbar';
-import Home from './routes/Home';
-import Start from './routes/Start';
-import Climate from './routes/Climate';
+import Home from './components/routes/Home';
+import Start from './components/routes/Start';
+import Climate from './components/routes/Climate';
 
 function App() {
     const isAuthenticated = useIsAuthenticated();

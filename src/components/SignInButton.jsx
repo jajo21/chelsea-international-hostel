@@ -1,6 +1,6 @@
 import React from "react";
 import { useMsal } from "@azure/msal-react";
-import { handleLogin } from "../auth/handleAuth";
+import { handleLogin } from "../data/auth/handleAuth";
 
 export const SignInButton = () => {
     const { instance } = useMsal();
