@@ -1,6 +1,7 @@
 import React from "react";
 import { SignInButton } from "../SignInButton";
 import logo from "../../img/logo.png";
+import "../css/start.css";
 
 function Start() {
   return (

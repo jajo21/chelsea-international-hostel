@@ -1,0 +1,52 @@
+
+.start {
+    margin: auto;
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: 30 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Desktop View */
+
+@media only screen and (min-width: 768px)
+{
+
+    .start {
+        margin: auto;
+        text-align: center;
+    }
+
+    img {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    margin: 50 auto;
+    margin-left: 20 auto;
+    
+    }
+
+    h2 {
+        text-align: center;
+    }
+    
+    .climatebtn {
+        justify-content: center;
+        display: grid;
+        margin: auto;
+        padding: 15;
+        cursor: pointer;
+    }
+    
+    .climatebtn:hover {
+        background-color: #fff;
+    }
+}
