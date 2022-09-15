@@ -1,17 +1,13 @@
 import React from "react";
 import "./room.css";
 
-function Room (){
-
-
-
+function Room({ name, temperature }) {
     return (
         <div className="room">
-        <p>Device ID:</p>
-        <p>Temperatur:</p>
-        <p>Fuktighet:</p>
-        <p>Decibel:</p>
-        
+            <p>{name}</p>
+            <p>Temperatur: {temperature}</p>
+            <p>Fuktighet:</p>
+            <p>Decibel:</p>
         </div>
     )
 }

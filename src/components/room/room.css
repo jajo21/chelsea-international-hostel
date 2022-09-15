@@ -1,11 +1,12 @@
 .room{
     -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        background-color: #9B9999;
-        border: solid 1px #000000;
-        border-radius: 6px;
-        line-height: 18px;
-        max-width: 5cm;
-        overflow: hidden;
-        padding: 12px;
+    -webkit-border-radius: 6px;
+    background-color: #9B9999;
+    border: solid 1px #000000;
+    border-radius: 6px;
+    line-height: 18px;
+    max-width: 5cm;
+    overflow: hidden;
+    padding: 10px;
+    height: 100px;
 }
