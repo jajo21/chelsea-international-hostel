@@ -7,9 +7,7 @@ function handleLogin(instance) {
         console.error(e);
     });
 }
-/**
- * Renders a button which, when selected, will open a popup for login
- */
+
 export const SignInButton = () => {
     const { instance } = useMsal();
 
