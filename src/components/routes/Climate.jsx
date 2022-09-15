@@ -4,6 +4,9 @@ import { callSmarthut } from '../../data/signalr/negotiate';
 import { initializeSignalRConnection } from '../../data/signalr/connectionSignalR';
 import { getMyBuilding } from '../../data/api/getDevices';
 import { loginRequest } from '../../data/auth/authConfig';
+import Room from '../room/Room';
+import "./climate.css";
+
 
 function Climate() {
     const isAuthenticated = useIsAuthenticated();
@@ -44,7 +47,13 @@ function Climate() {
     return (
         <div>
             <h1>Climate</h1>
+            <div className='flexbox'>
             {console.log("data", telemetryData)}
+            <div className='rooms'><Room /></div>
+            <div className='rooms'><Room/></div>
+            <div className='rooms'><Room/></div>
+            <div className='rooms'><Room/></div>
+            </div>
         </div>
     )
 }
