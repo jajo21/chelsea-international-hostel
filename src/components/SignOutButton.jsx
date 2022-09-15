@@ -1,17 +1,12 @@
 import React from "react";
 import { useMsal } from "@azure/msal-react";
-
-function handleLogout(instance) {
-  instance.logoutRedirect().catch((e) => {
-    console.error(e);
-  });
-}
+import { handleLogout } from "../auth/handleAuth";
 
 export const SignOutButton = () => {
   const { instance } = useMsal();
 
   return (
-    <div className="signoutButton">
+    <div className="signout-button">
       <button onClick={() => handleLogout(instance)}>Logga ut</button>
     </div>
   );
