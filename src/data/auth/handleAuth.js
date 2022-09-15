@@ -11,3 +11,12 @@ export function handleLogout(instance) {
         console.error(e);
     });
 }
+
+export function aquireToken(instance, accounts) {
+    const request = {
+        loginRequest,
+        account: accounts[0]
+    };
+
+    return instance.acquireTokenSilent(request).then(res => res.accessToken);
+}
