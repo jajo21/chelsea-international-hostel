@@ -1,6 +1,5 @@
 import React from "react";
 import { useMsal } from "@azure/msal-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function handleLogout(instance) {
   instance.logoutRedirect().catch((e) => {
@@ -17,6 +16,7 @@ export const SignOutButton = () => {
   return (
     <div>
       <button className="signoutButton" onClick={() => handleLogout(instance)}>
+        <i className="fa-solid fa-right-from-bracket"></i>
         Logga ut
       </button>
     </div>
