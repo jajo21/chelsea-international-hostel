@@ -1,4 +1,9 @@
-.rooms {
-    display: flex;
-    flex-wrap: wrap;
+.climate {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+}
+
+.rooms{
+    text-align: center;
 }

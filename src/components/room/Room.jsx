@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./room.css";
 
-function Room({ name, temperature }) {
+function Room({ name, unitName, alarm, value, unit }) {
     return (
         <div className="room">
-            <p>{name}</p>
-            <p>Temperatur: {temperature}</p>
-            <p>Fuktighet:</p>
-            <p>Decibel:</p>
+            <h2>{name}</h2>
+            <div className="room-card">
+                <p>{unitName} | {alarm} | {value} {unit}</p>
+            </div>
         </div>
     )
 }
