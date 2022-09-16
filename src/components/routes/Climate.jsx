@@ -7,56 +7,67 @@ import { loginRequest } from '../../data/auth/authConfig';
 import { aquireToken } from '../../data/auth/handleAuth';
 import { getBuilding } from '../../data/api/getDevices';
 import { getBuildingDevices } from '../../data/api/getDevices';
+import { createRooms } from "../../data/rooms/createRooms";
 import Room from '../room/Room';
 import "./climate.css";
+import { getUnits } from "../../data/api/getUnits";
 
 function Climate() {
-  const isAuthenticated = useIsAuthenticated();
-  const { accounts, instance } = useMsal();
+    const isAuthenticated = useIsAuthenticated();
+    const { accounts, instance } = useMsal();
 
-  const [devices, setDevices] = useState(null);
+    const [rooms, setRooms] = useState(null);
+    const [units, setUnits] = useState(null);
 
-  /*     const [negotiateUrl, setNegotiateUrl] = useState(null);
-        const [negotiateToken, setNegotiateToken] = useState(null);
-        const [telemetryData, setTelemetryData] = useState(null); */
+    /*     const [negotiateUrl, setNegotiateUrl] = useState(null);
+          const [negotiateToken, setNegotiateToken] = useState(null);
+          const [telemetryData, setTelemetryData] = useState(null); */
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      const fetchData = async () => {
-        const accessToken = await aquireToken(instance, accounts);
-        const building = await getBuilding(accessToken);
-        const devices = await getBuildingDevices(accessToken, building.id);
-        setDevices(devices);
-      };
-      fetchData();
-    }
-  }, [isAuthenticated]);
+    useEffect(() => {
+        if (isAuthenticated) {
+            const fetchData = async () => {
+                /* const accessToken = await aquireToken(instance, accounts);
+                 const building = await getBuilding(accessToken);
+                 const devices = await getBuildingDevices(accessToken, building.id); */
 
-  /*     useEffect(() => {
-            callSmarthut(accounts[0].username).then(res => {
-                setNegotiateUrl(res.url);
-                setNegotiateToken(res.accessToken);
-            })
-    
-            if (isAuthenticated && negotiateUrl !== null) {
-                const connection = initializeSignalRConnection(negotiateUrl, negotiateToken);
-                connection.on("newTelemetry", telemetry => setTelemetryData(telemetry));
-            }
-        }, [isAuthenticated, negotiateToken, negotiateUrl]); */
+                const units = await getUnits(instance, accounts);
+                console.log(units);
+                setUnits(units);
+                const rooms = await createRooms(instance, accounts)
+                setRooms(rooms);
+            };
+            fetchData();
+        }
+    }, [isAuthenticated]);
+
+    /*     useEffect(() => {
+              callSmarthut(accounts[0].username).then(res => {
+                  setNegotiateUrl(res.url);
+                  setNegotiateToken(res.accessToken);
+              })
+      
+              if (isAuthenticated && negotiateUrl !== null) {
+                  const connection = initializeSignalRConnection(negotiateUrl, negotiateToken);
+                  connection.on("newTelemetry", telemetry => setTelemetryData(telemetry));
+              }
+          }, [isAuthenticated, negotiateToken, negotiateUrl]); */
 
 
 
     return (
-        <div>
-            <h1>Climate</h1>
+        <div className="climate">
+            <h1>Klimat</h1>
 
             <div className='rooms'>
-                {devices && devices.map(device => {
+                {rooms && rooms.map(room => {
                     return (
                         <Room
-                            key={device.id}
-                            name={device.name}
-                            temperature={device.maxValue}
+                            key={room.id}
+                            name={room.name}
+                            devices={room.devices}
+                            alarm={room.alarm.toString()}
+                            units={units}
+
                         />
                     )
                 })}

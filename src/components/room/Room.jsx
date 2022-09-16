@@ -1,13 +1,30 @@
 import React from "react";
+
+import Device from "../device/Device";
 import "./room.css";
 
-function Room({ name, temperature }) {
+function Room({ name, devices, units, alarm }) {
     return (
         <div className="room">
-            <p>{name}</p>
-            <p>Temperatur: {temperature}</p>
-            <p>Fuktighet:</p>
-            <p>Decibel:</p>
+            <h2>{name}</h2>
+            <div className="room-card">
+                <p>VARNING</p>
+                {devices && devices.map(device => {
+                    console.log(units);
+                    const unit = units.find(unit => unit.id === device.unitId);
+                    if (unit) {
+                        return (
+                            <Device
+                                deviceId={device.id}
+                                alarm={alarm}
+                                unit={unit.unit}
+                                unitName={unit.name}
+                            />
+                        )
+                    }
+                })}
+                <button>Återställ</button>
+            </div>
         </div>
     )
 }
