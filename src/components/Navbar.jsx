@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useMsal } from "@azure/msal-react";
 import { handleLogout } from "../data/auth/handleAuth";
 import Button from "./Button";
+import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
+import LogoutIcon from "@mui/icons-material/Logout";
 import "./navbar.css";
 
 function Navbar() {
@@ -13,10 +15,12 @@ function Navbar() {
         <i className="fa fa-fw fa-home"></i>Hem
       </NavLink>
       <NavLink to="/climate" className="navbar-item">
-        <i className="fa-solid fa-temperature-high"></i>
+        <DeviceThermostatIcon />
         Klimatöversikt
       </NavLink>
-      <Button onClick={() => handleLogout(instance)} className="navbar-item">Logga ut</Button>
+      <Button className={"logout_btn"} onClick={() => handleLogout(instance)}>
+        <LogoutIcon />
+      </Button>
     </nav>
   );
 }

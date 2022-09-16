@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "../css/home.css";
+import "../css/button.css";
+import "../navbar.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -12,9 +14,9 @@ function Home() {
       </div>
       <div>
         <br />
-        <h2>Välkommen "användare"!</h2>
+        <h2 className="home_txt">Välkommen "användare"!</h2>
         <br />
-        <h2>Dina klimatanläggningar</h2>
+        <h2 className="climate_txt">Dina klimatanläggningar</h2>
         <br />
         <button
           className="climatebtn"

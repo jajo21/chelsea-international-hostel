@@ -6,14 +6,23 @@
 
 img {
     display: block;
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     margin: 30 auto;
 }
 
-h2 {
+.welcome {
     text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
 }
+
+.login_txt {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 70px;
+}
+
 
 /* Desktop View */
 
@@ -34,19 +43,15 @@ h2 {
     
     }
 
-    h2 {
+    .welcome {
         text-align: center;
+        font-size: 72px;
+        margin-top: 15px;
     }
-    
-    .climatebtn {
-        justify-content: center;
-        display: grid;
-        margin: auto;
-        padding: 15;
-        cursor: pointer;
-    }
-    
-    .climatebtn:hover {
-        background-color: #fff;
+
+    .login_txt {
+        text-align: center;
+        font-size: 68px;
+        margin-top: 30px;
     }
 }

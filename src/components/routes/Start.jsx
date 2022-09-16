@@ -4,6 +4,7 @@ import { handleLogin } from "../../data/auth/handleAuth";
 import Button from "../Button";
 import logo from "../../img/logo.png";
 import "../css/start.css";
+import "../css/button.css";
 
 function Start() {
   const { instance } = useMsal();
@@ -14,10 +15,12 @@ function Start() {
       </div>
       <br />
       <div className="start">
-        <h2>Välkommen!</h2>
+        <h2 className="welcome">Välkommen!</h2>
         <br />
-        <h2>Logga in för att ta dig vidare</h2>
-        <Button onClick={() => handleLogin(instance)}>Logga in</Button>
+        <h2 className="login_txt">Logga in för att ta dig vidare</h2>
+        <Button className={"startBtn"} onClick={() => handleLogin(instance)}>
+          Logga in
+        </Button>
       </div>
     </>
   );
