@@ -10,12 +10,14 @@ import { getBuildingDevices } from '../../data/api/getDevices';
 import { createRooms } from "../../data/rooms/createRooms";
 import Room from '../room/Room';
 import "./climate.css";
+import { getUnits } from "../../data/api/getUnits";
 
 function Climate() {
     const isAuthenticated = useIsAuthenticated();
     const { accounts, instance } = useMsal();
 
     const [rooms, setRooms] = useState(null);
+    const [units, setUnits] = useState(null);
 
     /*     const [negotiateUrl, setNegotiateUrl] = useState(null);
           const [negotiateToken, setNegotiateToken] = useState(null);
@@ -25,9 +27,12 @@ function Climate() {
         if (isAuthenticated) {
             const fetchData = async () => {
                 /* const accessToken = await aquireToken(instance, accounts);
-                const building = await getBuilding(accessToken);
-                const devices = await getBuildingDevices(accessToken, building.id); */
+                 const building = await getBuilding(accessToken);
+                 const devices = await getBuildingDevices(accessToken, building.id); */
 
+                const units = await getUnits(instance, accounts);
+                console.log(units);
+                setUnits(units);
                 const rooms = await createRooms(instance, accounts)
                 setRooms(rooms);
             };
@@ -51,7 +56,7 @@ function Climate() {
 
     return (
         <div className="climate">
-            <h1>Climate</h1>
+            <h1>Klimat</h1>
 
             <div className='rooms'>
                 {rooms && rooms.map(room => {
@@ -59,6 +64,10 @@ function Climate() {
                         <Room
                             key={room.id}
                             name={room.name}
+                            devices={room.devices}
+                            alarm={room.alarm.toString()}
+                            units={units}
+
                         />
                     )
                 })}
