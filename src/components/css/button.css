@@ -1,0 +1,72 @@
+.startBtn {
+    background-color: gainsboro;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px 32px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.climatebtn {
+    background-color: gainsboro;
+    justify-content: center;
+    display: grid;
+    margin: auto;
+    padding: 15px 32px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.climatebtn:hover {
+    background-color: rgb(161, 158, 158);
+}
+
+.logout_btn {
+    border: none;
+    background-color: gainsboro;
+}
+
+/* Desktop View */
+
+@media only screen and (min-width: 768px)
+{
+
+    .startBtn {
+        background-color: gainsboro;
+        color: black;
+        border: none;
+        padding: 18px 80px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 32px;
+    }
+    
+    .climatebtn {
+        justify-content: center;
+        display: grid;
+        margin: auto;
+        padding: 15;
+        cursor: pointer;
+    }
+    
+    .climatebtn:hover {
+        background-color: #fff;
+    }
+
+    .logout_btn {
+        border: none;
+        background-color: gainsboro;
+        display: block;
+    }
+}
