@@ -2,6 +2,7 @@ import { aquireToken } from "../auth/handleAuth";
 import { getBuilding, getBuildingDevices } from "../api/getDevices";
 import { Room } from "../classes/room";
 
+
 export async function createRooms(instance, accounts) {
     const accessToken = await aquireToken(instance, accounts);
     const building = await getBuilding(accessToken);
