@@ -1,6 +1,8 @@
 import { Room } from "../classes/room";
 
+
 export function createRooms(devices) {
+
 
     const rooms = [];
 
