@@ -48,10 +48,8 @@ function Climate() {
             devicesWithTelemetry.map(device => {
                 return telemetryData.map(telemetry => {
                     if (telemetry.deviceId === device.id.toUpperCase()) {
-                        console.log(device.id);
                         device.value = telemetryData[0].value;
                         return devicesWithTelemetry;
-
                     }
                     return devicesWithTelemetry;
                 })
@@ -68,7 +66,6 @@ function Climate() {
         <div className="climate">
             <h1>Klimat</h1>
             <div className='rooms'>
-                {console.log("R", rooms)}
                 {rooms && rooms.map(room => {
                     return (
                         <Room
@@ -80,7 +77,6 @@ function Climate() {
                         />
                     )
                 })}
-
             </div>
         </div>
     )

@@ -1,5 +1,3 @@
-import { aquireToken } from "../auth/handleAuth";
-import { getBuilding, getBuildingDevices } from "../api/getDevices";
 import { Room } from "../classes/room";
 
 export function createRooms(devices) {
@@ -59,8 +57,6 @@ export function createRooms(devices) {
                 break;
         }
     })
-
-    console.log(rooms);
 
     return rooms;
 }
