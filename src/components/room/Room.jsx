@@ -11,7 +11,7 @@ function Room({ name, devices, alarm }) {
         <div className="room">
             <h2>{name}</h2>
             <div className="room-card">
-                <p>VARNING</p>
+                {alarm ? "" : <p>Varning!</p>}
                 {devices && devices.map(device => {
                     const unit = units.find(unit => unit.id === device.unitId);
                     /* const value = device.id.toUpperCase() === telemetry[0].deviceId; */
@@ -21,12 +21,12 @@ function Room({ name, devices, alarm }) {
                             deviceId={device.id}
                             alarm={alarm}
                             unit={unit.unit}
-                            unitName={unit.name}
+                            unitName={unit.explanation}
                             telemetryValue={device.value}
                         />
                     )
                 })}
-                <button>Återställ</button>
+                {alarm ? "" : <button>Återställ</button>}
             </div>
         </div>
     )

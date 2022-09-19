@@ -3,6 +3,7 @@ import { useMsal, useIsAuthenticated } from "@azure/msal-react";
 import { aquireToken } from "../data/auth/handleAuth";
 import { getBuilding, getBuildingDevices } from "../data/api/getDevices";
 import { getUnits } from "../data/api/getUnits";
+import { addUnitExplanation } from "../data/units/handleUnits";
 
 const DeviceContext = createContext();
 
@@ -19,9 +20,10 @@ export function DeviceProvider({ children }) {
                 const accessToken = await aquireToken(instance, accounts);
                 const building = await getBuilding(accessToken);
                 const devices = await getBuildingDevices(accessToken, building.id);
-                const units = await getUnits(instance, accounts);
                 setDevices(devices);
-                setUnits(units);
+                const units = await getUnits(instance, accounts);
+                const unitsWithExplanation = addUnitExplanation(units);
+                setUnits(unitsWithExplanation);
             }
             fetchData();
         }
