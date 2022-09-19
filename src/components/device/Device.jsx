@@ -1,9 +1,9 @@
 import React from "react";
 
-function Device({ unit, alarm, unitName }) {
+function Device({ unit, alarm, unitName, telemetryValue }) {
     return (
         <div className="device">
-            <p>{unitName} {alarm ? "OK" : "Alarm"} 20 {unit}</p>
+            <p>{unitName} {alarm ? "OK" : "Alarm"} {telemetryValue} {unit}</p>
         </div>
     )
 }
