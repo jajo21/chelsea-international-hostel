@@ -8,7 +8,7 @@ import "../navbar.css";
 function Home() {
   const navigate = useNavigate();
   return (
-    <>
+    <main>
       <div className="logoContainer">
         <img src={logo} />
       </div>
@@ -27,7 +27,7 @@ function Home() {
           Chelsea International Hostel
         </button>
       </div>
-    </>
+    </main>
   );
 }
 
