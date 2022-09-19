@@ -1,29 +1,32 @@
 import React from "react";
+import { useContext } from "react";
 
 import Device from "../device/Device";
+import DeviceContext from "../../contexts/DeviceContext";
 import "./room.css";
 
-function Room({ name, devices, units, alarm }) {
+function Room({ name, devices, alarm }) {
+    const { units } = useContext(DeviceContext);
     return (
         <div className="room">
             <h2>{name}</h2>
             <div className="room-card">
-                <p>VARNING</p>
+                {alarm ? "" : <p>Varning!</p>}
                 {devices && devices.map(device => {
-                    console.log(units);
                     const unit = units.find(unit => unit.id === device.unitId);
-                    if (unit) {
-                        return (
-                            <Device
-                                deviceId={device.id}
-                                alarm={alarm}
-                                unit={unit.unit}
-                                unitName={unit.name}
-                            />
-                        )
-                    }
+                    /* const value = device.id.toUpperCase() === telemetry[0].deviceId; */
+                    return (
+                        <Device
+                            key={device.id}
+                            deviceId={device.id}
+                            alarm={alarm}
+                            unit={unit.unit}
+                            unitName={unit.explanation}
+                            telemetryValue={device.value}
+                        />
+                    )
                 })}
-                <button>Återställ</button>
+                {alarm ? "" : <button>Återställ</button>}
             </div>
         </div>
     )

@@ -1,12 +1,9 @@
-import { aquireToken } from "../auth/handleAuth";
-import { getBuilding, getBuildingDevices } from "../api/getDevices";
 import { Room } from "../classes/room";
 
 
-export async function createRooms(instance, accounts) {
-    const accessToken = await aquireToken(instance, accounts);
-    const building = await getBuilding(accessToken);
-    const devices = await getBuildingDevices(accessToken, building.id);
+export function createRooms(devices) {
+
+
     const rooms = [];
 
     devices.map((device, index) => {
@@ -62,8 +59,6 @@ export async function createRooms(instance, accounts) {
                 break;
         }
     })
-
-    console.log(rooms);
 
     return rooms;
 }

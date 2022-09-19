@@ -8,11 +8,12 @@ import Navbar from './components/Navbar';
 import Home from './components/routes/Home';
 import Start from './components/routes/Start';
 import Climate from './components/routes/Climate';
+import { DeviceProvider } from './contexts/DeviceContext';
 
 function App() {
     const isAuthenticated = useIsAuthenticated();
     return (
-        <>
+        <DeviceProvider>
             {!isAuthenticated && <Start />}
             {isAuthenticated &&
                 <>
@@ -23,7 +24,7 @@ function App() {
                     </Routes>
                 </>
             }
-        </>
+        </DeviceProvider>
     )
 }
 

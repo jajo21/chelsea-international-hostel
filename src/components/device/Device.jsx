@@ -1,9 +1,14 @@
 import React from "react";
 
-function Device({ unit, alarm, unitName }) {
+function Device({ unit, alarm, unitName, telemetryValue }) {
     return (
         <div className="device">
-            <p>{unitName} {alarm ? "OK" : "Alarm"} 20 {unit}</p>
+            {telemetryValue
+                ?
+                <p>{unitName} {alarm ? "OK" : "Alarm"} {telemetryValue.toFixed(1)} {unit}</p>
+                :
+                <p>Laddar</p>
+            }
         </div>
     )
 }
