@@ -51,9 +51,7 @@ function Navbar() {
           <LogoutIcon />
         </Button>
       </nav>
-      {!mobile}
 
-      {!mobile}
       <div className={sidebar ? "sidebar active" : "sidebar"}>
         <div className="sidebar-toggle">
           {sidebar ? (
@@ -79,14 +77,14 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
-        </div>
-        <div className="sidebar-logout">
-          <Button
-            className={"sidebar-btn"}
-            onClick={() => handleLogout(instance)}
-          >
-            <LogoutIcon />
-          </Button>
+          <div className="sidebar-logout">
+            <Button
+              className={"sidebar-btn"}
+              onClick={() => handleLogout(instance)}
+            >
+              <LogoutIcon />
+            </Button>
+          </div>
         </div>
       </div>
     </>

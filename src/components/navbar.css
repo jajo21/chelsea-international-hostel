@@ -58,7 +58,7 @@
     .sidebar-toggle {
         height: 100%;
         width: 40vw;
-        display:flex;
+        display:block;
         justify-content: flex-end;
     }
 
@@ -70,34 +70,33 @@
 
     .sidebar {
         height: 100%;
-        width: 16rem;
+        max-width: 16rem;
         position: fixed;
         background-color: gainsboro;
         transition: 0.3s all ease-in-out;
     }
 
     .sidebar-items {
-        font-size: 1.2rem;
+        font-size: 2vw;
         display: block;
+        align-items: center;
         flex-direction: column;
         transition: 0.2s all ease-out;
     }
 
     .sidebar-item {
         list-style: none;
-        margin-top: 1rem;
-        width:100%;
-        height: 3rem;
+        
     }
 
     .sidebar-item a{
         text-decoration: none;
-        font-size: 1.2rem;
-        display: flex;
+        font-size: vw;
+        display: block;
         align-items: center;
         color: black;
         cursor: pointer;
-        width: 100%;
+        width: 50%;
         margin-top: 1rem;
         height: 100%;
         border-radius: 5px;

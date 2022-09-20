@@ -43,14 +43,18 @@
 
     .startBtn {
         background-color: gainsboro;
+        width: 50%;
         color: black;
         border: none;
         padding: 18px 80px;
         cursor: pointer;
         text-align: center;
-        text-decoration: none;
-        display: inline-block;
+        display: block;
         font-size: 32px;
+        position: relative;
+        margin-top: 20px;
+        margin-left: 250;
+        height: auto;
     }
     
     .climatebtn {

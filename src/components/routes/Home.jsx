@@ -8,9 +8,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="logoContainer">
-        <img className="logo" src={logo} />
-      </div>
+      <img className="logo" src={logo} />
       <div>
         <br />
         <h2 className="home_txt">Välkommen "användare"!</h2>
