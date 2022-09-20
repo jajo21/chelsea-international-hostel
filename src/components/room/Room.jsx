@@ -1,13 +1,10 @@
 import React from "react";
-import { useContext } from "react";
 
 import Device from "../device/Device";
-import DeviceContext from "../../contexts/DeviceContext";
 import { restoreAlarm } from "../../data/signalr/restoreAlarm";
 import "./room.css";
 
 function Room({ name, devices, email }) {
-    const { units } = useContext(DeviceContext);
 
     const alarmTrue = (devices) => {
         let alarmTrue = false;
@@ -34,13 +31,11 @@ function Room({ name, devices, email }) {
                 {alarmTrue(devices) && <p>Varning!</p>}
 
                 {devices && devices.map(device => {
-                    const unit = units.find(unit => unit.id === device.unitId);
                     return (
                         <Device
                             key={device.id}
                             alarm={device.alarm}
-                            unit={unit.unit}
-                            unitName={unit.explanation}
+                            unitId={device.unitId}
                             telemetryValue={device.value}
                         />
                     )

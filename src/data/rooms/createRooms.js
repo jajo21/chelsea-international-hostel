@@ -3,47 +3,42 @@ import { Room } from "../classes/room";
 
 export function createRooms(devices) {
 
-
     const rooms = [];
 
     devices.map((device, index) => {
         const room = new Room();
+
         room.devices = [];
         switch (device.name) {
             case "Temperature back yard":
                 room.id = index + 1;
                 room.name = "Baksida";
                 room.devices.push(device);
-                room.alarm = false;
-                rooms.push(room)
+                rooms.push(room);
                 break;
             case "Temperature lobby":
                 room.id = index + 1;
                 room.name = "Lobby";
                 room.devices.push(device);
-                room.alarm = false;
-                rooms.push(room)
+                rooms.push(room);
                 break;
             case "Humidity Conference room 1":
                 room.id = index + 1;
                 room.name = "Konferens";
                 room.devices.push(device);
-                room.alarm = false;
-                rooms.push(room)
+                rooms.push(room);
                 break;
             case "Temperature swimming pool 2":
                 room.id = index + 1;
                 room.name = "Pool";
                 room.devices.push(device);
-                room.alarm = false;
-                rooms.push(room)
+                rooms.push(room);
                 break;
             case "Noise (dB) common area":
                 room.id = index + 1;
                 room.name = "Allmänt utrymme";
                 room.devices.push(device);
-                room.alarm = false;
-                rooms.push(room)
+                rooms.push(room);
                 break;
             case "Temperature common area":
                 if (rooms.find(e => e.name === 'Allmänt utrymme')) {
@@ -53,8 +48,7 @@ export function createRooms(devices) {
                     room.id = index + 1;
                     room.name = "Allmänt utrymme";
                     room.device = [device];
-                    room.alarm = false;
-                    rooms.push(room)
+                    rooms.push(room);
                 }
                 break;
         }
