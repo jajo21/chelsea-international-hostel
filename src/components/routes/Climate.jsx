@@ -19,16 +19,16 @@ function Climate() {
     const [connection, setConnection] = useState(null);
 
     useEffect(() => {
-        if (isAuthenticated) {
+        if (isAuthenticated && connection === null) {
             callSmarthut(accounts[0].username).then(res => {
                 const connection = initializeSignalRConnection(res.url, res.accessToken);
                 setConnection(connection);
             })
         }
-    }, [isAuthenticated]);
+    }, [isAuthenticated, connection]);
 
     useEffect(() => {
-        if (connection && !connection.connectionStarted) {
+        if (connection && !connection.connectionStarted) { // GÅR DET ATT GÖRA DET HÄR VID INLOGG UTAN POPUP?!
             connection.start().then(() => {
                 connection.on("newTelemetry", telemetry => setTelemetryData(telemetry));
                 connection.on("alarmNeutralized", alarmNeutralized => setAlarmNeutralized(alarmNeutralized));
@@ -85,9 +85,10 @@ function Climate() {
     return (
         <main>
             <div className="climate">
-                <h1>Klimat</h1>
+
                 <div className='rooms'>
                     {rooms && rooms.map(room => {
+
                         return (
                             <Room
                                 key={room.id}
