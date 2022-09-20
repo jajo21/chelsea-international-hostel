@@ -79,14 +79,14 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
-          <div className="sidebar-btn">
-            <Button
-              className={"sidebar_btn"}
-              onClick={() => handleLogout(instance)}
-            >
-              <LogoutIcon />
-            </Button>
-          </div>
+        </div>
+        <div className="sidebar-logout">
+          <Button
+            className={"sidebar-btn"}
+            onClick={() => handleLogout(instance)}
+          >
+            <LogoutIcon />
+          </Button>
         </div>
       </div>
     </>

@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "../css/home.css";
 import "../css/button.css";
-import "../navbar.css";
 
 function Home() {
   const navigate = useNavigate();
   return (
     <>
       <div className="logoContainer">
-        <img src={logo} />
+        <img className="logo" src={logo} />
       </div>
       <div>
         <br />
