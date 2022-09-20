@@ -59,6 +59,7 @@
         margin-right: 230px;
         padding: 15;
         cursor: pointer;
+        width: 40%;
     }
     
     .climatebtn:hover {
