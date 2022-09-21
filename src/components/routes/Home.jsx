@@ -7,7 +7,6 @@ import "../css/button.css";
 function Home() {
   const navigate = useNavigate();
   return (
-    <>
     <main>
       <img src={logo} />
       <div>
