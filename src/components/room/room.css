@@ -1,28 +1,16 @@
-.room{
+.room-card{
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     background-color: #9B9999;
-    border: solid 1px #000000;
+    border: solid 3px #000000;
     border-radius: 6px;
     line-height: 18px;
     overflow: hidden;
     padding: 10px;
-    
+    margin-block-end: 20px;
+    margin-block-start: 20px;
 }
 
-@media only screen and (min-width: 768px) {
-
-    .room {
-    margin-left: 250px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    background-color: #9B9999;
-    border: solid 1px #000000;
-    border-radius: 6px;
-    line-height: 18px;
-    overflow: hidden;
-    padding: 15px;
-    justify-content: space-between;
-
-    }
+.room-card{
+    font-size: large;
 }

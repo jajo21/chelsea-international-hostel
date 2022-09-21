@@ -8,6 +8,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <>
+    <main>
       <img src={logo} />
       <div>
         <br />
@@ -24,7 +25,7 @@ function Home() {
           Chelsea International Hostel
         </button>
       </div>
-    </>
+    </main>
   );
 }
 

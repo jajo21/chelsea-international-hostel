@@ -9,8 +9,8 @@ import "../css/button.css";
 function Start() {
   const { instance } = useMsal();
   return (
-    <>
-      <img className="logo" src={logo} />
+    <main>
+        <img src={logo} />
       <br />
       <div className="start">
         <h2 className="welcome">Välkommen!</h2>
@@ -19,7 +19,7 @@ function Start() {
           Logga in
         </Button>
       </div>
-    </>
+    </main>
   );
 }
 
