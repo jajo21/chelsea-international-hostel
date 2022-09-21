@@ -5,7 +5,7 @@ import { getBuilding, getBuildingDevices } from "../data/api/getDevices";
 import { getUnits } from "../data/api/getUnits";
 import { addUnitExplanation } from "../data/units/handleUnits";
 import { callSmarthut } from "../data/signalr/negotiate";
-import { initializeSignalRConnection } from "../../data/signalr/connectionSignalR";
+import { initializeSignalRConnection } from "../data/signalr/connectionSignalR";
 
 const DeviceContext = createContext();
 
