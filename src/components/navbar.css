@@ -80,13 +80,14 @@
 
     .sidebar-item {
         list-style: none;
+        vertical-align: middle;
     }
 
     .sidebar-item a{
         text-decoration: none;
         align-items: center;
         font-size: 2vw;
-        display: block;
+        display: inline-flex;
         color: black;
         cursor: pointer;
         width: 80%;

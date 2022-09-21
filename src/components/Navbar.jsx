@@ -42,10 +42,10 @@ function Navbar() {
     <>
       <nav className="navbar">
         <NavLink to="/" className="navbar-item">
-          <HomeIcon />
+          <HomeIcon fontSize="large" />
         </NavLink>
         <NavLink to="/climate" className="navbar-item">
-          <DeviceThermostatIcon />
+          <DeviceThermostatIcon fontSize="large" />
         </NavLink>
         <Button className={"logout_btn"} onClick={() => handleLogout(instance)}>
           <LogoutIcon />
@@ -56,12 +56,12 @@ function Navbar() {
         <ul className="sidebar-items">
           <li className="sidebar-item">
             <NavLink to="/" className="sidebar-item">
-              <HomeIcon /> Hem
+              <HomeIcon fontSize="large" /> Hem
             </NavLink>
           </li>
           <li className="sidebar-item">
             <NavLink to="/climate" className="sidebar-item">
-              <DeviceThermostatIcon /> Klimatöversikt
+              <DeviceThermostatIcon fontSize="large" /> Klimatöversikt
             </NavLink>
           </li>
         </ul>
