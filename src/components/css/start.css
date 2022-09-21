@@ -21,7 +21,7 @@
 .login_txt {
     text-align: center;
     font-size: 7vw;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 }
 
@@ -40,10 +40,11 @@
 
     .logo {
     display: block;
-    max-width: 50%;
-    max-height: 50%;
+    width: 65%;
+    height: 65%;
     margin: 20px;
-    margin-left: 190;
+    margin-left: auto;
+    margin-right: auto;
     }
 
     .welcome {
@@ -56,6 +57,6 @@
     .login_txt {
         text-align: center;
         font-size: 5vw;
-        margin-top: 80px;
+        margin-top: 60px;
     }
 }

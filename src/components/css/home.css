@@ -1,12 +1,10 @@
-@media screen and (max-width: 768px) {
 
-.logo {
+img {
     display: block;
-    max-width: 85%;
-    max-height: 90%;
-    margin: 30;
-    margin-top: -20px;
-    margin-left: 300px;
+    width: 85%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .home_txt {
@@ -20,18 +18,18 @@
     margin-top: 20px;
 
 }
-}
+
 
 /* Desktop View */
 
 @media screen and (min-width: 768px)
 {
-    .logo {
-    display: block;
+   img {
     width: 50%;
     height: 50%;
-    padding: 10px;
-    }
+    margin-right: 140px;
+    object-fit: contain;
+   }
 
     .home_txt {
         text-align: center;

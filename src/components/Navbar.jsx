@@ -52,39 +52,26 @@ function Navbar() {
         </Button>
       </nav>
 
-      <div className={sidebar ? "sidebar active" : "sidebar"}>
-        <div className="sidebar-toggle">
-          {sidebar ? (
-            <MenuIcon
-              className="sidebar-toggle-logo"
-              onClick={() => setSidebar(!sidebar)}
-            />
-          ) : (
-            <ClearIcon
-              className="sidebar-toggle-logo"
-              onClick={() => setSidebar(!sidebar)}
-            />
-          )}
-          <ul className="sidebar-items">
-            <li className="sidebar-item">
-              <NavLink to="/" className="sidebar-item">
-                <HomeIcon /> Hem
-              </NavLink>
-            </li>
-            <li className="sidebar-item">
-              <NavLink to="/climate" className="sidebar-item">
-                <DeviceThermostatIcon /> Klimatöversikt
-              </NavLink>
-            </li>
-          </ul>
-          <div className="sidebar-logout">
-            <Button
-              className={"sidebar-btn"}
-              onClick={() => handleLogout(instance)}
-            >
-              <LogoutIcon />
-            </Button>
-          </div>
+      <div className="sidebar">
+        <ul className="sidebar-items">
+          <li className="sidebar-item">
+            <NavLink to="/" className="sidebar-item">
+              <HomeIcon /> Hem
+            </NavLink>
+          </li>
+          <li className="sidebar-item">
+            <NavLink to="/climate" className="sidebar-item">
+              <DeviceThermostatIcon /> Klimatöversikt
+            </NavLink>
+          </li>
+        </ul>
+        <div className="sidebar-logout">
+          <Button
+            className={"sidebar-btn"}
+            onClick={() => handleLogout(instance)}
+          >
+            <LogoutIcon />
+          </Button>
         </div>
       </div>
     </>
