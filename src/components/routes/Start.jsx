@@ -10,13 +10,10 @@ function Start() {
   const { instance } = useMsal();
   return (
     <main>
-      <div className="logoContainer">
         <img src={logo} />
-      </div>
       <br />
       <div className="start">
         <h2 className="welcome">Välkommen!</h2>
-        <br />
         <h2 className="login_txt">Logga in för att ta dig vidare</h2>
         <Button className={"startBtn"} onClick={() => handleLogin(instance)}>
           Logga in

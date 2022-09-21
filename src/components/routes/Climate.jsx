@@ -3,16 +3,14 @@ import { useIsAuthenticated, useMsal } from "@azure/msal-react";
 import { callSmarthut } from '../../data/signalr/negotiate';
 import { initializeSignalRConnection } from '../../data/signalr/connectionSignalR';
 import { createRooms } from "../../data/rooms/createRooms";
-import Room from '../room/Room';
+import Room from "../room/Room";
 import "./climate.css";
 import DeviceContext from "../../contexts/DeviceContext";
-
 
 function Climate() {
     const { devices, setDevices } = useContext(DeviceContext);
     const isAuthenticated = useIsAuthenticated();
     const { accounts } = useMsal();
-
     const [rooms, setRooms] = useState(null);
     const [telemetryData, setTelemetryData] = useState(null);
     const [alarmNeutralized, setAlarmNeutralized] = useState(null);
@@ -59,10 +57,37 @@ function Climate() {
             setDevices(devicesWithTelemetry);
         }
 
-        const rooms = createRooms(devices);
-        setRooms(rooms);
+  useEffect(() => {
+    if (connection && !connection.connectionStarted) {
+      connection
+        .start()
+        .then(() => {
+          connection.on("newTelemetry", (telemetry) =>
+            setTelemetryData(telemetry)
+          );
+        })
+        .catch((err) => console.error("Connection interrupted: ", err));
+    }
+  }, [connection]);
 
-    }, [telemetryData]);
+  useEffect(() => {
+    if (telemetryData) {
+      const devicesWithTelemetry = [...devices];
+      devicesWithTelemetry.map((device) => {
+        return telemetryData.map((telemetry) => {
+          if (telemetry.deviceId === device.id.toUpperCase()) {
+            console.log(device.id);
+            device.value = telemetryData[0].value;
+            return devicesWithTelemetry;
+          }
+          return devicesWithTelemetry;
+        });
+      });
+      setDevices(devicesWithTelemetry);
+    }
+    const rooms = createRooms(devices);
+    setRooms(rooms);
+  }, [telemetryData]);
 
     useEffect(() => {
         if (alarmNeutralized) {

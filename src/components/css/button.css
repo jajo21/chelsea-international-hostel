@@ -18,12 +18,13 @@
     justify-content: center;
     display: grid;
     margin: auto;
-    padding: 15px 32px;
+    padding: 10px 32px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     font-weight: bold;
+    width: 90%;
 }
 
 .climatebtn:hover {
@@ -42,22 +43,28 @@
 
     .startBtn {
         background-color: gainsboro;
+        width: 50%;
         color: black;
         border: none;
         padding: 18px 80px;
         cursor: pointer;
         text-align: center;
-        text-decoration: none;
-        display: inline-block;
+        display: block;
         font-size: 32px;
+        position: relative;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
     }
     
     .climatebtn {
         justify-content: center;
         display: grid;
-        margin: auto;
+        margin-right: 230px;
         padding: 15;
         cursor: pointer;
+        width: 40%;
     }
     
     .climatebtn:hover {
@@ -68,5 +75,13 @@
         border: none;
         background-color: gainsboro;
         display: block;
+    }
+
+    .sidebar-btn {
+        position: absolute;
+        right: 10;
+        bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

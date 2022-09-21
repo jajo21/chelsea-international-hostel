@@ -3,6 +3,7 @@ import React from "react";
 import Device from "../device/Device";
 import { restoreAlarm } from "../../data/signalr/restoreAlarm";
 import "./room.css";
+import "../navbar.css";
 
 function Room({ name, devices, email }) {
 
