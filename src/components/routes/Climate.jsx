@@ -1,74 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useMsal } from "@azure/msal-react";
-import { createRooms } from "../../data/rooms/createRooms";
+import React, { useContext } from "react";
 import Room from '../room/Room';
 import "./climate.css";
 import DeviceContext from "../../contexts/DeviceContext";
 
 
 function Climate() {
-    const { devices, setDevices, connection } = useContext(DeviceContext);
-    const { accounts } = useMsal();
-
-    const [rooms, setRooms] = useState(null);
-    const [telemetryData, setTelemetryData] = useState(null);
-    const [alarmNeutralized, setAlarmNeutralized] = useState(null);
-
-
-    useEffect(() => {
-        if (connection && !connection._connectionStarted) {
-            connection.start().then(() => {
-                connection.on("newTelemetry", telemetry => setTelemetryData(telemetry));
-                connection.on("alarmNeutralized", alarmNeutralized => setAlarmNeutralized(alarmNeutralized));
-            })
-                .catch(err => console.error('Connection interrupted: ', err));
-        }
-    }, [connection])
-
-    useEffect(() => {
-        if (telemetryData) {
-            const devicesWithTelemetry = [...devices];
-            devicesWithTelemetry.map(device => {
-                return telemetryData.map(telemetry => {
-                    if (device.alarm === undefined) {
-                        device.alarm = false;
-                    }
-                    if (telemetry.deviceId === device.id.toUpperCase()) {
-                        device.value = telemetry.value;
-                        if (device.value > device.maxValue || device.value < device.minValue) {
-                            device.alarm = true;
-                        }
-
-                        return devicesWithTelemetry;
-                    }
-                    return devicesWithTelemetry;
-                })
-            })
-            setDevices(devicesWithTelemetry);
-        }
-
-        const rooms = createRooms(devices);
-        setRooms(rooms);
-
-    }, [telemetryData]);
-
-    useEffect(() => {
-        if (alarmNeutralized) {
-            let alarmNeutralizedId = alarmNeutralized.slice(33, 69);
-            const changeRooms = [...rooms];
-            changeRooms.map(room => {
-                room.devices.map(device => {
-                    if (device.id === alarmNeutralizedId) {
-                        device.alarm = false;
-                    }
-                    return changeRooms;
-                })
-                return changeRooms;
-            })
-            setRooms(changeRooms);
-        }
-
-    }, [alarmNeutralized]);
+    const { accounts, rooms } = useContext(DeviceContext);
 
     return (
         <main>
