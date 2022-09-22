@@ -21,6 +21,7 @@ export function DeviceProvider({ children }) {
 
     const [connection, setConnection] = useState(null);
     const [alarmNeutralized, setAlarmNeutralized] = useState(null);
+    const [alarms, setAlarms] = useState([]);
 
     useEffect(() => {
         if (isAuthenticated && connection === null) {
@@ -104,6 +105,23 @@ export function DeviceProvider({ children }) {
         }
     }, [alarmNeutralized]);
 
+    useEffect(() => {
+        if (devices) {
+            const devicesStatus = devices.map(device => {
+                let alarms;
+                if (device.alarm) {
+                    alarms = { deviceId: device.id, status: true }
+                } else {
+                    alarms = { deviceId: device.id, status: false }
+                }
+                return alarms;
+            })
+
+            const devicesWithAlarm = devicesStatus.filter(device => device.status === true);
+            setAlarms(devicesWithAlarm);
+        }
+    }, [devices])
+
     return (
         <DeviceContext.Provider
             value={{
@@ -111,6 +129,7 @@ export function DeviceProvider({ children }) {
                 units,
                 accounts,
                 rooms,
+                alarms,
                 setDevices
             }}>
             {children}
