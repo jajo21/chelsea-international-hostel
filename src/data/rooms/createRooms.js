@@ -1,58 +1,25 @@
 import { Room } from "../classes/room";
 
-
 export function createRooms(devices) {
 
     const rooms = [];
+    const roomNames = devices.map(device => device.roomName);
+    const uniqueRoomNames = [...new Set(roomNames)];
 
-    devices.map((device, index) => {
+    uniqueRoomNames.map((name, index) => {
         const room = new Room();
-
+        room.id = index + 1;
         room.devices = [];
-        switch (device.name) {
-            case "Temperature back yard":
-                room.id = index + 1;
-                room.name = "Baksida";
-                room.devices.push(device);
-                rooms.push(room);
-                break;
-            case "Temperature lobby":
-                room.id = index + 1;
-                room.name = "Lobby";
-                room.devices.push(device);
-                rooms.push(room);
-                break;
-            case "Humidity Conference room 1":
-                room.id = index + 1;
-                room.name = "Konferens";
-                room.devices.push(device);
-                rooms.push(room);
-                break;
-            case "Temperature swimming pool 2":
-                room.id = index + 1;
-                room.name = "Pool";
-                room.devices.push(device);
-                rooms.push(room);
-                break;
-            case "Noise (dB) common area":
-                room.id = index + 1;
-                room.name = "Allmänt utrymme";
-                room.devices.push(device);
-                rooms.push(room);
-                break;
-            case "Temperature common area":
-                if (rooms.find(e => e.name === 'Allmänt utrymme')) {
-                    const room = rooms.find(e => e.name === 'Allmänt utrymme');
-                    room.devices.push(device);
-                } else {
-                    room.id = index + 1;
-                    room.name = "Allmänt utrymme";
-                    room.device = [device];
-                    rooms.push(room);
-                }
-                break;
-        }
+        room.name = name;
+        rooms.push(room);
     })
 
+    rooms.map(room => {
+        devices.map(device => {
+            if (room.name === device.roomName) {
+                room.devices.push(device);
+            }
+        })
+    })
     return rooms;
 }

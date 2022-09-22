@@ -6,7 +6,7 @@ import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 function Climate() {
-  const { accounts, rooms } = useContext(DeviceContext);
+  const { rooms } = useContext(DeviceContext);
   const alarm = true;
   const alarmNotis = "Allt är OK";
   return (
@@ -29,7 +29,6 @@ function Climate() {
                   key={room.id}
                   name={room.name}
                   devices={room.devices}
-                  email={accounts[0].username}
                 />
               );
             })}

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Device from "../device/Device";
 import { restoreAlarm } from "../../data/signalr/restoreAlarm";
+import DeviceContext from "../../contexts/DeviceContext";
 import "./room.css";
 import "../navbar.css";
 
-function Room({ name, devices, email }) {
+function Room({ name, devices }) {
+    const { accounts } = useContext(DeviceContext);
 
     const alarmTrue = (devices) => {
         let alarmTrue = false;
@@ -42,7 +44,7 @@ function Room({ name, devices, email }) {
                     )
                 })}
 
-                {alarmTrue(devices) && <button onClick={() => handleAlarm(devices, email)}
+                {alarmTrue(devices) && <button onClick={() => handleAlarm(devices, accounts[0].username)}
                 >Återställ
                 </button>}
             </div>
