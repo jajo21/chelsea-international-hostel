@@ -1,16 +1,60 @@
-.room-card{
+.room {
+    text-align: left;
+}
+
+.room-card-ok {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     background-color: #9B9999;
     border: solid 3px #000000;
-    border-radius: 6px;
+    border-radius: 5px;
     line-height: 18px;
     overflow: hidden;
     padding: 10px;
-    margin-block-end: 20px;
-    margin-block-start: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: large;
+    align-items: center;
+    position: relative;
 }
 
-.room-card{
+.room-card-alarm {
+    overflow: hidden;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: #9B9999;
+    border: solid 3px #000000;
+    border-radius: 5px;
+    line-height: 18px;
     font-size: large;
+    border-color: red;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-around;
+}
+
+.room-card-alarm img {
+    width: auto !important;
+    height: 100% !important;
+}
+
+.alarmDiv button {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 2px;
+    background: #FFFCFC;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.alarmDiv {
+    align-self: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
 }
