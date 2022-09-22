@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
 import DeviceContext from "../../contexts/DeviceContext";
+import "./device.css";
 
 function Device({ unitId, alarm, telemetryValue }) {
     const { units } = useContext(DeviceContext);
     const unit = units.find(unit => unit.id === unitId);
 
     return (
-        <div className="device">
+        <div className={alarm ? "alarmActive" : "alarmOk"}>
             {telemetryValue
                 ?
-                <p>{unit.explanation} {alarm ? "Alarm" : "OK"} {telemetryValue.toFixed(1)} {unit.unit}</p>
+                <p>{unit.explanation} {alarm ? <span>Alarm</span> : <span>OK</span>} {telemetryValue.toFixed(1)} {unit.unit}</p>
                 :
                 <p>Laddar</p>
             }

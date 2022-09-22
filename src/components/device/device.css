@@ -1,0 +1,20 @@
+.alarmOk span {
+    color: black;
+    background-color: #25CD4A;
+}
+
+.alarmActive span {
+    color: black;
+    background-color: #fc0505;
+
+}
+
+.alarmActive p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.alarmOk p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
