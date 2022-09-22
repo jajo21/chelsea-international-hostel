@@ -11,13 +11,13 @@ function Climate() {
   const alarmNotis = "Allt är OK";
   return (
     <main>
+      {alarm && (
+        <div className={alarm ? "greennotis" : "rednotis"}>
+          {alarmNotis}
+          <SentimentSatisfiedIcon />
+        </div>
+      )}
       <div className="climate">
-        {alarm && (
-          <div className={alarm ? "greennotis" : "rednotis"}>
-            {alarmNotis}
-            <SentimentSatisfiedIcon />
-          </div>
-        )}
         <div className="filter">
           <FilterAltIcon fontSize="large" />
         </div>

@@ -44,7 +44,7 @@ function Room({ name, devices }) {
                 </div>
                 <div className="alarmDiv">
                     {alarmTrue(devices) && <img src={varning} />}
-                    {alarmTrue(devices) && <button onClick={() => handleAlarm(devices, email)}
+                    {alarmTrue(devices) && <button onClick={() => handleAlarm(devices, accounts[0].username)}
                     >Återställ
                     </button>}
                 </div>

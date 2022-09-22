@@ -14,21 +14,19 @@ function Navbar() {
   const { instance } = useMsal();
 
   const [mobile, setMobile] = useState(false);
-  const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 768) {
       setMobile(true);
     }
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 800) {
+      if (window.innerWidth < 768) {
         setMobile(true);
       } else {
         setMobile(false);
-        setSidebar(true);
       }
     };
 
@@ -51,29 +49,30 @@ function Navbar() {
           <LogoutIcon />
         </Button>
       </nav>
-
-      <div className="sidebar">
-        <ul className="sidebar-items">
-          <li className="sidebar-item">
-            <NavLink to="/" className="sidebar-item">
-              <HomeIcon fontSize="large" /> Hem
-            </NavLink>
-          </li>
-          <li className="sidebar-item">
-            <NavLink to="/climate" className="sidebar-item">
-              <DeviceThermostatIcon fontSize="large" /> Klimatöversikt
-            </NavLink>
-          </li>
-        </ul>
-        <div className="sidebar-logout">
-          <Button
-            className={"sidebar-btn"}
-            onClick={() => handleLogout(instance)}
-          >
-            <LogoutIcon />
-          </Button>
+      {!mobile &&
+        <div className="sidebar">
+          <ul className="sidebar-items">
+            <li className="sidebar-item">
+              <NavLink to="/" className="sidebar-item">
+                <HomeIcon fontSize="large" /> Hem
+              </NavLink>
+            </li>
+            <li className="sidebar-item">
+              <NavLink to="/climate" className="sidebar-item">
+                <DeviceThermostatIcon fontSize="large" /> Klimatöversikt
+              </NavLink>
+            </li>
+          </ul>
+          <div className="sidebar-logout">
+            <Button
+              className={"sidebar-btn"}
+              onClick={() => handleLogout(instance)}
+            >
+              <LogoutIcon />
+            </Button>
+          </div>
         </div>
-      </div>
+      }
     </>
   );
 }
