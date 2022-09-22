@@ -6,17 +6,15 @@ import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 function Climate() {
-  const { rooms } = useContext(DeviceContext);
-  const alarm = true;
-  const alarmNotis = "Allt är OK";
+  const { rooms, alarms } = useContext(DeviceContext);
+
   return (
     <main>
-      {alarm && (
-        <div className={alarm ? "greennotis" : "rednotis"}>
-          {alarmNotis}
-          <SentimentSatisfiedIcon />
-        </div>
-      )}
+      <div className={alarms.length === 0 ? "greennotis" : "rednotis"}>
+        {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
+        {alarms.length === 0 ? <SentimentSatisfiedIcon /> : ""}
+      </div>
+
       <div className="climate">
         <div className="filter">
           <FilterAltIcon fontSize="large" />
