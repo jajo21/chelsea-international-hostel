@@ -1,10 +1,12 @@
-import React from "react";
-import varning from "./varning.png"
+import React, { useContext } from "react";
 import Device from "../device/Device";
 import { restoreAlarm } from "../../data/signalr/restoreAlarm";
+import DeviceContext from "../../contexts/DeviceContext";
 import "./room.css";
+import varning from "./varning.png"
 
-function Room({ name, devices, email }) {
+function Room({ name, devices }) {
+    const { accounts } = useContext(DeviceContext);
 
     const alarmTrue = (devices) => {
         let alarmTrue = false;
@@ -29,7 +31,6 @@ function Room({ name, devices, email }) {
             <h3 className="room-title">{name}</h3>
             <div className={alarmTrue(devices) ? "room-card-alarm" : "room-card-ok"}>
                 <div className="devices">
-
                     {devices && devices.map(device => {
                         return (
                             <Device
