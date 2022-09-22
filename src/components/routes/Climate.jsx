@@ -5,7 +5,7 @@ import DeviceContext from "../../contexts/DeviceContext";
 
 
 function Climate() {
-    const { accounts, rooms } = useContext(DeviceContext);
+    const { rooms } = useContext(DeviceContext);
 
     return (
         <main>
@@ -19,7 +19,6 @@ function Climate() {
                                 key={room.id}
                                 name={room.name}
                                 devices={room.devices}
-                                email={accounts[0].username}
                             />
                         )
                     })}

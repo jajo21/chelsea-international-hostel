@@ -7,6 +7,7 @@ import { addUnitExplanation } from "../data/units/handleUnits";
 import { callSmarthut } from "../data/signalr/negotiate";
 import { initializeSignalRConnection } from "../data/signalr/connectionSignalR";
 import { createRooms } from "../data/rooms/createRooms";
+import { calculateRoomNameOnDevice } from "../data/devices/handleDevices";
 
 const DeviceContext = createContext();
 
@@ -56,6 +57,7 @@ export function DeviceProvider({ children }) {
                     if (telemetryArray) {
                         const devicesWithTelemetry = [...devices];
                         devicesWithTelemetry.map(device => {
+                            device.roomName = calculateRoomNameOnDevice(device.name);
                             return telemetryArray.map(telemetry => {
                                 if (device.alarm === undefined) {
                                     device.alarm = false;
@@ -83,7 +85,7 @@ export function DeviceProvider({ children }) {
             })
                 .catch(err => console.error('Connection interrupted: ', err));
         }
-    }, [connection, devices]);
+    }, [connection, devices, units]);
 
     useEffect(() => {
         if (alarmNeutralized) {
