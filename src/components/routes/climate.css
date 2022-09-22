@@ -9,6 +9,32 @@
     margin-bottom: 100px;
 }
 
+.rednotis {
+    background-color: red;
+    margin-top: -80px;
+    padding: 7px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.greennotis {
+    background-color: rgb(39, 223, 39);
+    margin-top: -80px;
+    padding: 7px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.filter {
+    position: right;
+    display: inline-flex;
+    margin-right: -300px;
+}
+
 @media only screen and (min-width: 768px)
 {
     .climate {
@@ -24,5 +50,25 @@
     .climate-name {
         margin-left: 230px;
         padding: 10px;
+    }
+
+    .rednotis {
+        background-color: red;
+        height: 48px;
+        width: 100%;
+        margin-top: 120px;
+    }
+
+    .greennotis {
+        background-color: rgb(39, 223, 39);
+        height: 48px;
+        width: 100%;
+        margin-top: 120px;
+    }
+
+    .filter {
+        position: absolute right;
+        display: block;
+        margin-right: -600px;
     }
 }
