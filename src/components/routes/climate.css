@@ -2,7 +2,7 @@
     text-align: center;
     margin: auto;
     max-width: 800px;
-    
+    margin-top: 70px;
 }
 
 .rooms{
@@ -11,36 +11,55 @@
 }
 
 .rednotis {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
     background-color: red;
-    padding: 7px;
+    padding: 14px;
     font-weight: bold;
+    width: 100%;
+    font-size: 14px;
 }
 
 .greennotis {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
     background-color: rgb(39, 223, 39);
-    padding: 7px;
+    padding: 14px;
     font-weight: bold;
-    min-width: 300px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.greennotis span, .rednotis span {
+    margin: 0 10px;
 }
 
 .filter {
-    font-size: 60px;
-    text-align: right;
-   
+    font-size: 20px;
+    justify-content: right;
+    margin-top: 10px;
+    display: flex;
 }
 
-/* .filter {
-    position: right;
-    display: inline-flex;
-    margin-right: -300px;
-} */
+.filter-icon:hover{
+    cursor: pointer;
+}
+@media only screen and (min-width: 550px) {
+    .rednotis{
+        font-size: 20px;
+    }
+}
 
 @media only screen and (min-width: 768px)
 {
     .climate {
-        margin-top: 40px;
-            margin-left: 180px;
-            max-width: 1600px;
+        margin-top: 60px;
+        margin-left: 180px;
+        max-width: 1600px;
     }
     
     .rooms{
@@ -52,27 +71,32 @@
         padding: 10px;
     }
 
-    .rednotis {
-        text-align: center;
-        background-color: red;
+    .rednotis{
         height: 60px;
         width: 100%;
-        
-        
+        font-size: 30px;
+    }
+    .greennotis {
+        height: 60px;
+        width: 100%;
+        font-size: 40px;
+        padding: 10px 0 ;
     }
 
-    .greennotis {
-        
-       text-align: center;
-        justify-items:center;
-        background-color: rgb(39, 223, 39);
-        height: 60px;
-        width: 100% !important;
-        min-width: 1000px;
-    }
     .filter {
-        font-size: 60px;
-        text-align: right;
         min-width: 800px;
+        margin-bottom: 10px;
+    }
+    .filter-text {
+        font-size: 30px;
+    }
+    .filter-icon {
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width: 1030px) {
+    .rednotis {
+        font-size: 40px;
+        padding: 10px 0 ;
     }
 }

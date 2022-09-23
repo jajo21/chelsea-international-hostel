@@ -4,9 +4,7 @@
 }
 
 .rooms {
-
-    
-        max-width: 320px;
+    max-width: 320px;
     justify-content: center;
     text-align: center;
     margin: auto;
@@ -24,9 +22,7 @@
     margin-bottom: 15px;
     font-size: large;
     align-items: center;
-    
-
-min-height: 110;
+    min-height: 110;
     min-width: 280;
 }
 
@@ -49,7 +45,7 @@ min-height: 110;
     align-items: center;
     align-content: space-around;
     min-height: 110;
-        min-width: 280;
+    min-width: 280;
 }
 
 .room-card-alarm img {
@@ -82,16 +78,13 @@ min-height: 110;
 
     .rooms {
             display: flex;
-
             min-width: 800px;
             max-width: 985px;
             margin: auto;
             flex-flow: row wrap;
             justify-content: space-around;
         }
-    .room{
-        
-    }
+
         .room-card-ok {
             -moz-border-radius: 6px;
             -webkit-border-radius: 6px;
@@ -105,13 +98,8 @@ min-height: 110;
             margin-bottom: 15px;
             font-size: large;
             display: flex;
-
-  
-    
             min-height: 160;
-            min-width: 330;
-
-           
+            min-width: 330; 
         }
     
         .room-card-alarm {
@@ -127,15 +115,13 @@ min-height: 110;
             margin-top: 5px;
             margin-bottom: 15px;
             padding: 10px;
-        min-height: 160;
+            min-height: 160;
             min-width: 330;
-
-
             display: flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
-                align-items: center;
-                align-content: space-around;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: space-around;
         }
     
         .room-card-alarm img {
