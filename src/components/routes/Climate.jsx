@@ -19,7 +19,7 @@ function Climate() {
       )}
       <div className="climate">
         <div className="filter">
-          <FilterAltIcon fontSize="large" />
+          <FilterAltIcon fontSize="inherit" />
         </div>
         <div className="rooms">
           {rooms &&

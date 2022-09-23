@@ -1,7 +1,8 @@
 .climate {
     text-align: center;
     margin: auto;
-    width: 80%;
+    max-width: 800px;
+    
 }
 
 .rooms{
@@ -19,6 +20,13 @@
     background-color: rgb(39, 223, 39);
     padding: 7px;
     font-weight: bold;
+    min-width: 300px;
+}
+
+.filter {
+    font-size: 60px;
+    text-align: right;
+   
 }
 
 /* .filter {
@@ -30,9 +38,9 @@
 @media only screen and (min-width: 768px)
 {
     .climate {
-        text-align: center;
-        margin: auto;
-        width: 80%;
+        margin-top: 40px;
+            margin-left: 180px;
+            max-width: 1600px;
     }
     
     .rooms{
@@ -45,14 +53,26 @@
     }
 
     .rednotis {
+        text-align: center;
         background-color: red;
         height: 60px;
         width: 100%;
+        
+        
     }
 
     .greennotis {
+        
+       text-align: center;
+        justify-items:center;
         background-color: rgb(39, 223, 39);
         height: 60px;
-        width: 100%;
+        width: 100% !important;
+        min-width: 1000px;
+    }
+    .filter {
+        font-size: 60px;
+        text-align: right;
+        min-width: 800px;
     }
 }
