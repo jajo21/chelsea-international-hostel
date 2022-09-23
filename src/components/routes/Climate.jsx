@@ -11,7 +11,9 @@ function Climate() {
   return (
     <main>
       <div className={alarms.length === 0 ? "greennotis" : "rednotis"}>
-        {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
+        {alarms.length === 0
+          ? `Allt är OK`
+          : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
         {alarms.length === 0 ? <SentimentSatisfiedIcon /> : ""}
       </div>
 
@@ -23,11 +25,7 @@ function Climate() {
           {rooms &&
             rooms.map((room) => {
               return (
-                <Room
-                  key={room.id}
-                  name={room.name}
-                  devices={room.devices}
-                />
+                <Room key={room.id} name={room.name} devices={room.devices} />
               );
             })}
         </div>
