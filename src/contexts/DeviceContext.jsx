@@ -21,6 +21,9 @@ export function DeviceProvider({ children }) {
 
     const [connection, setConnection] = useState(null);
     const [alarmNeutralized, setAlarmNeutralized] = useState(null);
+    const [alarms, setAlarms] = useState([]);
+
+    const [filter, setFilter] = useState(false);
 
     useEffect(() => {
         if (isAuthenticated && connection === null) {
@@ -82,8 +85,8 @@ export function DeviceProvider({ children }) {
                 });
 
                 connection.on("alarmNeutralized", alarmNeutralized => setAlarmNeutralized(alarmNeutralized));
-            })
-                .catch(err => console.error('Connection interrupted: ', err));
+
+            }).catch(err => console.error('Connection interrupted: ', err));
         }
     }, [connection, devices, units]);
 
@@ -91,18 +94,32 @@ export function DeviceProvider({ children }) {
         if (alarmNeutralized) {
             let alarmNeutralizedId = alarmNeutralized.slice(33, 69);
             const restoreRooms = [...rooms];
-            restoreRooms.map(room => {
-                room.devices.map(device => {
-                    if (device.id === alarmNeutralizedId) {
-                        device.alarm = false;
-                    }
-                    return restoreRooms;
-                })
-                return restoreRooms;
-            })
+            restoreRooms.map(room => room.devices.map(device => {
+                if (device.id === alarmNeutralizedId) {
+                    device.alarm = false;
+                }
+                return device;
+            }));
             setRooms(restoreRooms);
         }
     }, [alarmNeutralized]);
+
+    useEffect(() => {
+        if (devices) {
+            const devicesStatus = devices.map(device => {
+                let alarms;
+                if (device.alarm) {
+                    alarms = { deviceId: device.id, status: true }
+                } else {
+                    alarms = { deviceId: device.id, status: false }
+                }
+                return alarms;
+            })
+
+            const devicesWithAlarm = devicesStatus.filter(device => device.status === true);
+            setAlarms(devicesWithAlarm);
+        }
+    }, [devices])
 
     return (
         <DeviceContext.Provider
@@ -111,7 +128,10 @@ export function DeviceProvider({ children }) {
                 units,
                 accounts,
                 rooms,
-                setDevices
+                alarms,
+                filter,
+                setFilter,
+                setDevices,
             }}>
             {children}
         </DeviceContext.Provider>

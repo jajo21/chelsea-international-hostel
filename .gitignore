@@ -6,6 +6,7 @@
 .pnp.js
 /dist
 /.parcel-cache
+/.vscode
 
 # testing
 /coverage
