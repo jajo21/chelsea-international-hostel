@@ -50,6 +50,11 @@
     border: 1px solid #000000;
     border-radius: 5px;
 }
+.alarmDiv button:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 6px #888888;
+    transform: scale(105%);
+}
 
 .alarmDiv {
     align-self: auto;
