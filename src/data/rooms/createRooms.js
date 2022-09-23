@@ -1,14 +1,5 @@
 import { Room } from "../classes/room";
-
-const alarmTrue = (devices) => {
-    let alarmTrue = false;
-    devices.map(device => {
-        if (device.alarm) {
-            alarmTrue = true;
-        }
-    })
-    return alarmTrue;
-}
+import { alarmTrue } from "../alarms/handleAlarms";
 
 export function createRooms(devices) {
 
