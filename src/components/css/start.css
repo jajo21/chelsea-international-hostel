@@ -1,11 +1,21 @@
+.start-wrapper {
+    max-width: 800px;
+    margin: auto;
+}
 
-@media screen and (max-width: 768px) {
+.space {
+    margin-bottom: 40px;
+}
+
 .start {
     margin: auto;
     text-align: center;
+    margin-top: 40px;
+
 }
 
-.logo {
+.startLogo {
+
     display: block;
     max-width: 80%;
     max-height: 80%;
@@ -14,49 +24,27 @@
 
 .welcome {
     text-align: center;
-    font-size: 12vw;
-    margin-top: 10px;
+    font-size: 30px;
 }
 
 .login_txt {
     text-align: center;
-    font-size: 7vw;
-    margin-top: 50px;
+    font-size: 30px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+
 }
-}
 
-/* Desktop View */
-
-@media only screen and (min-width: 768px)
-{
-
-    .start {
-     text-align: center;
-    font-size: 23vw;
-    width: 100%;
-    display: block;
-    position: relative;
-    }
-
-    .logo {
-    display: block;
-    width: 65%;
-    height: 65%;
-    margin: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    }
+@media screen and (min-width: 1000px) {
 
     .welcome {
-        text-align: center;
-        font-size: 10vw;
-        margin-top: 10px;
-        align-items: center;
+        font-size: 50px;
     }
 
-    .login_txt {
-        text-align: center;
-        font-size: 5vw;
-        margin-top: 60px;
-    }
+        .login_txt {
+            font-size: 50px;
+    
+        }
+
+        
 }
