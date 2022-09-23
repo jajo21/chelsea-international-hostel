@@ -23,6 +23,8 @@ export function DeviceProvider({ children }) {
     const [alarmNeutralized, setAlarmNeutralized] = useState(null);
     const [alarms, setAlarms] = useState([]);
 
+    const [filter, setFilter] = useState(false);
+
     useEffect(() => {
         if (isAuthenticated && connection === null) {
             callSmarthut(accounts[0].username).then((res) => {
@@ -83,8 +85,8 @@ export function DeviceProvider({ children }) {
                 });
 
                 connection.on("alarmNeutralized", alarmNeutralized => setAlarmNeutralized(alarmNeutralized));
-            })
-                .catch(err => console.error('Connection interrupted: ', err));
+
+            }).catch(err => console.error('Connection interrupted: ', err));
         }
     }, [connection, devices, units]);
 
@@ -130,7 +132,9 @@ export function DeviceProvider({ children }) {
                 accounts,
                 rooms,
                 alarms,
-                setDevices
+                filter,
+                setFilter,
+                setDevices,
             }}>
             {children}
         </DeviceContext.Provider>
