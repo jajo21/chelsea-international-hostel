@@ -8,8 +8,8 @@ function Home() {
   const navigate = useNavigate();
   return (
     <main>
-      <img src={logo} />
-      <div>
+      <div className="home_wrapper">
+      <img className="home_logo" src={logo} />
         <br />
         <h2 className="home_txt">Välkommen "användare"!</h2>
         <br />
@@ -27,5 +27,4 @@ function Home() {
     </main>
   );
 }
-
 export default Home;

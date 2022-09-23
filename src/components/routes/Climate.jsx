@@ -22,10 +22,14 @@ function Climate() {
       </div>
       <div className="climate">
         <div className="filter">
+
+          <FilterAltIcon fontSize="inherit" />
+
           {filter ? "Larmade Rum" : "Alla Rum"}
           <span title="Filter">
             <FilterAltIcon onClick={() => setFilter(!filter)} />
           </span>
+
         </div>
         <div className="rooms">
           {rooms && !filter &&
