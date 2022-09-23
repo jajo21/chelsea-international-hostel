@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Room from "../room/Room";
-import "./climate.css";
 import DeviceContext from "../../contexts/DeviceContext";
 import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { alarmTrue } from "../../data/alarms/handleAlarms";
+import "./climate.css";
 
 function Climate() {
   const { rooms, alarms, filter, setFilter } = useContext(DeviceContext);

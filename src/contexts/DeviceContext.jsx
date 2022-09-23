@@ -94,15 +94,12 @@ export function DeviceProvider({ children }) {
         if (alarmNeutralized) {
             let alarmNeutralizedId = alarmNeutralized.slice(33, 69);
             const restoreRooms = [...rooms];
-            restoreRooms.map(room => {
-                room.devices.map(device => {
-                    if (device.id === alarmNeutralizedId) {
-                        device.alarm = false;
-                    }
-                    return restoreRooms;
-                })
-                return restoreRooms;
-            })
+            restoreRooms.map(room => room.devices.map(device => {
+                if (device.id === alarmNeutralizedId) {
+                    device.alarm = false;
+                }
+                return device;
+            }));
             setRooms(restoreRooms);
         }
     }, [alarmNeutralized]);
