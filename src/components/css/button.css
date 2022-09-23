@@ -1,5 +1,5 @@
 .startBtn {
-    background-color: gainsboro;
+    background-color: #9B9999;
     color: black;
     font-weight: bold;
     border: none;
@@ -14,7 +14,7 @@
 }
 
 .climatebtn {
-    background-color: gainsboro;
+    background-color: #9B9999;
     justify-content: center;
     display: grid;
     margin: auto;
@@ -24,25 +24,20 @@
     border-radius: 5px;
     font-size: 18px;
     font-weight: bold;
-    width: 90%;
-}
 
-.climatebtn:hover {
-    background-color: rgb(161, 158, 158);
 }
 
 .logout_btn {
     border: none;
-    background-color: gainsboro;
+    background-color: #9B9999;
 }
 
 /* Desktop View */
 
-@media only screen and (min-width: 768px)
-{
+@media only screen and (min-width: 768px) {
 
     .startBtn {
-        background-color: gainsboro;
+        background-color: #9B9999;
         width: 50%;
         color: black;
         border: none;
@@ -57,31 +52,25 @@
         margin-right: auto;
         height: auto;
     }
-    
-    .climatebtn {
-        justify-content: center;
-        display: grid;
-        margin-right: 230px;
-        padding: 15;
-        cursor: pointer;
-        width: 40%;
-    }
-    
-    .climatebtn:hover {
-        background-color: #fff;
-    }
 
     .logout_btn {
         border: none;
-        background-color: gainsboro;
+        background-color: #9B9999;
         display: block;
     }
 
     .sidebar-btn {
-        position: absolute;
-        right: 10;
-        bottom: 30px;
+        color: #000;
+        display: inline-flex;
+        background-color: #9B9999;
         margin-left: auto;
         margin-right: auto;
+        width: fit-content;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+
     }
 }

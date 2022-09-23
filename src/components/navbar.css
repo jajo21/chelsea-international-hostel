@@ -3,45 +3,45 @@
     padding: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
 
-.navbar {
-    background: gainsboro;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-} 
+    .navbar {
+        background: #9B9999;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+    }
 
- .navbar-item{
-    color: black;
-    font-size: 25px;
-    user-select: none;
-    cursor: pointer;
-} 
+    .navbar-item {
+        color: black;
+        font-size: 25px;
+        user-select: none;
+        cursor: pointer;
+    }
 
-.nav-item a {
-    text-decoration: none;
-    font-size: 25px;
-    transition: 0.2s all ease-out;
-    border-radius: 5px;
-}
+    .nav-item a {
+        text-decoration: none;
+        font-size: 25px;
+        transition: 0.2s all ease-out;
+        border-radius: 5px;
+    }
 
-.nav-item a:hover {
-    background: tomato;
-}
+    .nav-item a:hover {
+        background: tomato;
+    }
 
-.sidebar active {
-    left: 0;
-}
+    .sidebar active {
+        left: 0;
+    }
 
-.sidebar {
-    visibility: hidden;
-}
+    .sidebar {
+        visibility: hidden;
+    }
 
 }
 
@@ -50,24 +50,25 @@
 @media screen and (min-width: 768px) {
     .navbar {
         display: none !important;
-    } 
-    
-     .navbar-item{
-     display: none !important; 
-    } 
+    }
+
+    .navbar-item {
+        display: none !important;
+    }
 
     .sidebar {
-        margin: 0;
+        margin-top: -40px;
         padding: 0;
         height: 100%;
-        width: 250px;
+        width: 180px;
         overflow: auto;
         position: fixed;
-        background-color: gainsboro;
+        background-color: #9B9999;
         transition: 0.3s all ease-in-out;
     }
 
     .sidebar-items {
+        margin-top: 30;
         font-size: 2vw;
         display: block;
         flex-direction: column;
@@ -75,25 +76,42 @@
     }
 
     .sidebar-item {
+        justify-content: center;
         list-style: none;
-        vertical-align: middle;
+        font-weight: bold;
     }
 
-    .sidebar-item a{
+    .sidebar-item1 {
+        margin-left: -10;
+        justify-content: center;
+        list-style: none;
+        font-weight: bold;
+    }
+
+    .sidebar-item a {
         text-decoration: none;
         align-items: center;
-        font-size: 2vw;
+        font-size: 20px;
         display: inline-flex;
         color: black;
         cursor: pointer;
-        width: 80%;
+        width: 100%;
         margin-top: 1rem;
-        border-radius: 5px;
         transition: 0.2s all ease-out;
-    } 
+    }
 
     .sidebar-item a:hover {
-        background: rgb(228, 63, 63);
+        transform: scale(1.2);
     }
-}
 
+    .sidebar-logout {
+        left: 22;
+        bottom: 30px;
+        position: fixed;
+        width: 138px;
+        align-items: center;
+
+    }
+
+
+}
