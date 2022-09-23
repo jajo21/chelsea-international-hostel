@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import Room from "../room/Room";
 import DeviceContext from "../../contexts/DeviceContext";
-import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { alarmTrue } from "../../data/alarms/handleAlarms";
 import "./climate.css";
@@ -17,21 +18,23 @@ function Climate() {
   return (
     <main>
       <div className={alarms.length === 0 ? "greennotis" : "rednotis"}>
-        {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
-        {alarms.length === 0 ? <SentimentSatisfiedIcon /> : ""}
+        <span>
+          {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
+        </span>
+        <span>
+          {alarms.length === 0 ? <SentimentSatisfiedAltIcon fontSize="inherit" /> : <SentimentVeryDissatisfiedIcon fontSize="inherit" />}
+        </span>
       </div>
       <div className="climate">
-        <div className="filter">
-
-          <FilterAltIcon fontSize="inherit" />
-
-          {filter ? "Larmade Rum" : "Alla Rum"}
-          <span title="Filter">
-            <FilterAltIcon onClick={() => setFilter(!filter)} />
-          </span>
-
-        </div>
         <div className="rooms">
+          <div className="filter">
+            <div className="filter-text" >
+              {filter ? "Larmade Rum" : "Alla Rum"}
+            </div>
+            <span title="Filter" className="filter-icon">
+              <FilterAltIcon fontSize="inherit" onClick={() => setFilter(!filter)} />
+            </span>
+          </div>
           {rooms && !filter &&
             rooms.map((room) => {
               return (
