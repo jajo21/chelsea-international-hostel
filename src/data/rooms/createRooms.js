@@ -1,5 +1,15 @@
 import { Room } from "../classes/room";
 
+const alarmTrue = (devices) => {
+    let alarmTrue = false;
+    devices.map(device => {
+        if (device.alarm) {
+            alarmTrue = true;
+        }
+    })
+    return alarmTrue;
+}
+
 export function createRooms(devices) {
 
     const rooms = [];
@@ -21,5 +31,21 @@ export function createRooms(devices) {
             }
         })
     })
-    return rooms;
+
+    const roomsFilteredByAlarm = rooms.sort((a, b) => {
+        const roomA = alarmTrue(a.devices);
+        const roomB = alarmTrue(b.devices);
+
+        if (roomA && !roomB) {
+            return -1
+        }
+
+        if (!roomA && roomB) {
+            return 1
+        }
+
+        return 0;
+    });
+
+    return roomsFilteredByAlarm;
 }
