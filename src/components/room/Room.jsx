@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
+
+import DataContext from "../../contexts/DataContext";
 import Device from "../device/Device";
 import { alarmTrue, handleAlarm } from "../../data/alarms/handleAlarms";
-import DeviceContext from "../../contexts/DeviceContext";
+
+import varning from "../../img/varning.png"
 import "./room.css";
-import varning from "./varning.png"
 
 function Room({ name, devices }) {
-    const { accounts } = useContext(DeviceContext);
+    const { accounts } = useContext(DataContext);
 
     return (
         <div className="room">

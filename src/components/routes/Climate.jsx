@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import Room from "../room/Room";
-import DeviceContext from "../../contexts/DeviceContext";
+import DataContext from "../../contexts/DataContext";
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { alarmTrue } from "../../data/alarms/handleAlarms";
-import "./climate.css";
+import "./css/climate.css";
 
 function Climate() {
-  const { rooms, alarms, filter, setFilter } = useContext(DeviceContext);
+  const { rooms, alarms, filter, setFilter } = useContext(DataContext);
 
   let filteredRooms = null;
   if (filter) {

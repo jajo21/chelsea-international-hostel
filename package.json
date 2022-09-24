@@ -4,7 +4,8 @@
   "description": "Trello planering: https://trello.com/b/Mw29IXIw/projektplanering",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html --https --port 5001 --open"
+    "start": "parcel index.html --https --port 5001 --open",
+    "build": "rm -rf dist && parcel build index.html"
   },
   "repository": {
     "type": "git",

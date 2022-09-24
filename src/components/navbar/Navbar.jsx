@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useMsal } from "@azure/msal-react";
-import { handleLogout } from "../data/auth/handleAuth";
-import Button from "./Button";
+import { handleLogout } from "../../data/auth/handleAuth";
+
 import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
 import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
+
+import Button from "../button/Button";
 import "./navbar.css";
 
 function Navbar() {
