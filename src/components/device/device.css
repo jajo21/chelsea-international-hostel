@@ -1,12 +1,17 @@
 .alarmOk span {
     color: black;
     background-color: #25CD4A;
+    padding:3px;
+    border-radius: 4px;
+    border: solid 1px black;
 }
 
 .alarmActive span {
     color: black;
     background-color: #fc0505;
-
+    padding:3px;
+    border-radius: 4px;
+    border: solid 1px black;
 }
 
 .alarmActive p {

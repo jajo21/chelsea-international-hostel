@@ -60,14 +60,10 @@
     .climate {
         margin-top: 60px;
         margin-left: 180px;
-        max-width: 1600px;
     }
     
     .rooms{
         display: flex;
-/*         min-width: 800px;
-        max-width: 985px;
-        margin: auto; */
         max-width: none;
         flex-wrap: wrap;
         flex-direction: row;

@@ -1,6 +1,10 @@
 .loading-div-large {
-    padding: 100px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 250;
 }
+
 .loading-div-small {
   padding: 5px;
 }
