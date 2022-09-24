@@ -5,6 +5,9 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { alarmTrue } from "../../data/alarms/handleAlarms";
+
+import Loading from "../loading/Loading";
+
 import "./css/climate.css";
 
 function Climate() {
@@ -27,6 +30,7 @@ function Climate() {
       </div>
       <div className="climate">
         <div className="rooms">
+
           <div className="filter">
             <div className="filter-text" >
               {filter ? "Larmade Rum" : "Alla Rum"}
@@ -35,6 +39,9 @@ function Climate() {
               <FilterAltIcon fontSize="inherit" onClick={() => setFilter(!filter)} />
             </span>
           </div>
+
+          {!rooms && <Loading size={"large"} />}
+
           {rooms && !filter &&
             rooms.map((room) => {
               return (
@@ -44,7 +51,8 @@ function Climate() {
                   devices={room.devices}
                 />
               );
-            })}
+            })
+          }
 
           {filteredRooms && filter &&
             filteredRooms.map((room) => {

@@ -1,0 +1,36 @@
+.loading-div-large {
+    padding: 100px;
+}
+.loading-div-small {
+  padding: 5px;
+}
+
+.spinner {
+    border-top-color: rgb(47, 47, 47);
+    border-left-color: rgb(47, 47, 47);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-style: solid;
+    border-radius: 50%;  
+    animation: spinner 1s linear infinite;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .spinner-small {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 2px;
+  }
+
+  .spinner-large {
+    width: 5rem;
+    height: 5rem;
+    border-width: 6px;
+  }
