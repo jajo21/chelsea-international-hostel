@@ -40,9 +40,9 @@ function Climate() {
             </span>
           </div>
 
+          {!rooms && <Loading size={"large"} />}
 
-          {rooms && !filter
-            ?
+          {rooms && !filter &&
             rooms.map((room) => {
               return (
                 <Room
@@ -52,8 +52,6 @@ function Climate() {
                 />
               );
             })
-            :
-            <Loading />  /* DEN HÄR BEÖVER LÖSAS SÅ DEN BLIR BRA */
           }
 
           {filteredRooms && filter &&

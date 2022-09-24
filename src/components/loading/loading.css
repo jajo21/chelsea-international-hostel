@@ -1,11 +1,11 @@
-.loading-div {
+.loading-div-large {
     padding: 100px;
+}
+.loading-div-small {
+  padding: 5px;
 }
 
 .spinner {
-    width: 5rem;
-    height: 5rem;
-    border-width: 6px;
     border-top-color: rgb(47, 47, 47);
     border-left-color: rgb(47, 47, 47);
     border-bottom-color: transparent;
@@ -21,4 +21,16 @@
   @keyframes spinner {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  .spinner-small {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 2px;
+  }
+
+  .spinner-large {
+    width: 5rem;
+    height: 5rem;
+    border-width: 6px;
   }

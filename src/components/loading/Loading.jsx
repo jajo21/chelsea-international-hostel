@@ -1,10 +1,10 @@
 import React from 'react'
 import "./loading.css";
 
-function Loading() {
+function Loading({ size }) {
     return (
-        <div className='loading-div'>
-            <div className='spinner spinner-large spinner-blue spinner-slow'></div>
+        <div className={`loading-div-${size}`}>
+            <div className={`spinner spinner-${size}`}></div>
         </div>
     )
 }

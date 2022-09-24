@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import DataContext from "../../contexts/DataContext";
+import Loading from "../loading/Loading";
 import "./device.css";
 
 function Device({ unitId, alarm, telemetryValue }) {
@@ -12,7 +13,7 @@ function Device({ unitId, alarm, telemetryValue }) {
                 ?
                 <p>{unit.explanation} {alarm ? <span>Alarm</span> : <span>OK</span>} {telemetryValue.toFixed(1)} {unit.unit}</p>
                 :
-                <p>Laddar</p>
+                <Loading size={"small"} />
             }
         </div>
     )
