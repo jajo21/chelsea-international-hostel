@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import DeviceContext from "../../contexts/DeviceContext";
+import DataContext from "../../contexts/DataContext";
 import "./device.css";
 
 function Device({ unitId, alarm, telemetryValue }) {
-    const { units } = useContext(DeviceContext);
+    const { units } = useContext(DataContext);
     const unit = units.find(unit => unit.id === unitId);
 
     return (

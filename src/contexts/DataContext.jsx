@@ -9,9 +9,9 @@ import { initializeSignalRConnection } from "../data/signalr/connectionSignalR";
 import { createRooms } from "../data/rooms/createRooms";
 import { calculateRoomNameOnDevice } from "../data/devices/handleDevices";
 
-const DeviceContext = createContext();
+const DataContext = createContext();
 
-export function DeviceProvider({ children }) {
+export function DataProvider({ children }) {
     const isAuthenticated = useIsAuthenticated();
     const { accounts, instance } = useMsal();
 
@@ -122,7 +122,7 @@ export function DeviceProvider({ children }) {
     }, [devices])
 
     return (
-        <DeviceContext.Provider
+        <DataContext.Provider
             value={{
                 devices,
                 units,
@@ -134,8 +134,8 @@ export function DeviceProvider({ children }) {
                 setDevices,
             }}>
             {children}
-        </DeviceContext.Provider>
+        </DataContext.Provider>
     )
 }
 
-export default DeviceContext
+export default DataContext
