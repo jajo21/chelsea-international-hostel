@@ -124,29 +124,15 @@ export function DataProvider({ children }) {
         }
     }, [devices])
 
-    useEffect(() => {
-        if (devices) {
-            const d = devices.map(device => {
-                device.roomName = calculateRoomNameOnDevice(device.name);
-                return device;
-            })
-            console.log(d);
-            const createdRooms = createRooms(d);
-            setRooms(createdRooms);
-        }
-    }, [devices])
-
     return (
         <DataContext.Provider
             value={{
-                devices,
                 units,
                 accounts,
                 rooms,
                 alarms,
                 filter,
                 setFilter,
-                setDevices,
             }}>
             {children}
         </DataContext.Provider>
