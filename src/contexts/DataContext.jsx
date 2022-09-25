@@ -20,7 +20,6 @@ export function DataProvider({ children }) {
     const [rooms, setRooms] = useState(null);
 
     const [connection, setConnection] = useState(null);
-    const [alarmNeutralized, setAlarmNeutralized] = useState(null);
     const [alarms, setAlarms] = useState([]);
 
     const [filter, setFilter] = useState(false);
@@ -28,10 +27,7 @@ export function DataProvider({ children }) {
     useEffect(() => {
         if (isAuthenticated && connection === null) {
             callSmarthut(accounts[0].username).then((res) => {
-                const connection = initializeSignalRConnection(
-                    res.url,
-                    res.accessToken
-                );
+                const connection = initializeSignalRConnection(res.url, res.accessToken);
                 setConnection(connection);
             });
         }
@@ -76,36 +72,29 @@ export function DataProvider({ children }) {
                                 return devicesWithTelemetry;
                             })
                         })
-
                         setDevices(devicesWithTelemetry);
                     }
-
                     const createdRooms = createRooms(devices);
                     setRooms(createdRooms);
                 });
 
                 connection.on("alarmNeutralized", alarmNeutralized => {
-                    setAlarmNeutralized(alarmNeutralized);
                     console.log(alarmNeutralized);
+                    const alarmNeutralizedId = alarmNeutralized.slice(33, 69);
+                    if (devices) {
+                        const resetDevices = devices.map(device => {
+                            if (device.id === alarmNeutralizedId) {
+                                device.alarm = false;
+                            }
+                            return device
+                        })
+                        setDevices(resetDevices);
+                    }
                 });
 
             }).catch(err => console.error('Connection interrupted: ', err));
         }
     }, [connection, devices, units]);
-
-    useEffect(() => {
-        if (alarmNeutralized) {
-            let alarmNeutralizedId = alarmNeutralized.slice(33, 69);
-            const restoreRooms = [...rooms];
-            restoreRooms.map(room => room.devices.map(device => {
-                if (device.id === alarmNeutralizedId) {
-                    device.alarm = false;
-                }
-                return device;
-            }));
-            setRooms(restoreRooms);
-        }
-    }, [alarmNeutralized]);
 
     useEffect(() => {
         if (devices) {
@@ -122,7 +111,7 @@ export function DataProvider({ children }) {
             const devicesWithAlarm = devicesStatus.filter(device => device.status === true);
             setAlarms(devicesWithAlarm);
         }
-    }, [devices])
+    }, [devices]);
 
     return (
         <DataContext.Provider

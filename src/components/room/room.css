@@ -57,7 +57,13 @@
 .alarmDiv button:hover {
     cursor: pointer;
     box-shadow: 0 3px 6px #888888;
-    transform: scale(105%);
+    transition: 0.2s all ease-out;
+    transform: scale(110%);
+}
+
+.alarmDiv button:focus {
+    transform: scale(0%);
+    transition: 0.3s all ease-out;
 }
 
 .alarmDiv {
@@ -121,8 +127,8 @@
     
         .alarmDiv button {
             font-weight: 600;
-            font-size: 14px;
-            padding: 2px;
+            font-size: 16px;
+            padding: 4px;
             background: #FFFCFC;
             border: 1px solid #000000;
             border-radius: 5px;
