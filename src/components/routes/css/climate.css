@@ -1,12 +1,13 @@
 .climate {
     text-align: center;
-    margin: auto;
-    max-width: 800px;
     margin-top: 70px;
 }
 
 .rooms{
     text-align: center;
+    max-width: 320px;
+    justify-content: center;
+    margin:auto;
     margin-bottom: 100px;
 }
 
@@ -59,11 +60,16 @@
     .climate {
         margin-top: 60px;
         margin-left: 180px;
-        max-width: 1600px;
     }
     
     .rooms{
-        text-align: center;
+        display: flex;
+        max-width: none;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 20px;
+        
     }
     
     .climate-name {
@@ -84,7 +90,7 @@
     }
 
     .filter {
-        min-width: 800px;
+        width: 93%;
         margin-bottom: 10px;
     }
     .filter-text {
@@ -92,6 +98,13 @@
     }
     .filter-icon {
         font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1020px){
+    .rooms {
+        justify-content: left;
+        margin-left: none;
     }
 }
 @media only screen and (min-width: 1030px) {

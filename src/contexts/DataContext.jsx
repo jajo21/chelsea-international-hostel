@@ -84,7 +84,10 @@ export function DataProvider({ children }) {
                     setRooms(createdRooms);
                 });
 
-                connection.on("alarmNeutralized", alarmNeutralized => setAlarmNeutralized(alarmNeutralized));
+                connection.on("alarmNeutralized", alarmNeutralized => {
+                    setAlarmNeutralized(alarmNeutralized);
+                    console.log(alarmNeutralized);
+                });
 
             }).catch(err => console.error('Connection interrupted: ', err));
         }
