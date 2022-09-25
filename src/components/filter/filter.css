@@ -1,0 +1,29 @@
+.filter {
+    font-size: 20px;
+    justify-content: right;
+    display: flex;
+}
+
+.filter-icon {
+    font-size: 25px;
+}
+
+.filter-icon:hover{
+    cursor: pointer;
+    transform: scale(130%);
+    transition: all 0.2s ease-out;
+}
+
+@media only screen and (min-width: 768px)
+{
+    .filter {
+        width: 93%;
+        padding: 10px;
+    }
+    .filter-text {
+        font-size: 25px;
+    }
+    .filter-icon {
+        font-size: 30px;
+    }
+}

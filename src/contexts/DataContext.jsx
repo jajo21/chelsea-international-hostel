@@ -44,10 +44,10 @@ export function DataProvider({ children }) {
                 const accessToken = await aquireToken(instance, accounts);
                 const building = await getBuilding(accessToken);
                 const devices = await getBuildingDevices(accessToken, building.id);
-                setDevices(devices);
                 const units = await getUnits(instance, accounts);
                 const unitsWithExplanation = addUnitExplanation(units);
                 setUnits(unitsWithExplanation);
+                setDevices(devices);
             }
             fetchData();
         }
@@ -127,14 +127,12 @@ export function DataProvider({ children }) {
     return (
         <DataContext.Provider
             value={{
-                devices,
                 units,
                 accounts,
                 rooms,
                 alarms,
                 filter,
                 setFilter,
-                setDevices,
             }}>
             {children}
         </DataContext.Provider>
