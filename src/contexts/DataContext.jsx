@@ -44,10 +44,10 @@ export function DataProvider({ children }) {
                 const accessToken = await aquireToken(instance, accounts);
                 const building = await getBuilding(accessToken);
                 const devices = await getBuildingDevices(accessToken, building.id);
-                setDevices(devices);
                 const units = await getUnits(instance, accounts);
                 const unitsWithExplanation = addUnitExplanation(units);
                 setUnits(unitsWithExplanation);
+                setDevices(devices);
             }
             fetchData();
         }
@@ -121,6 +121,18 @@ export function DataProvider({ children }) {
 
             const devicesWithAlarm = devicesStatus.filter(device => device.status === true);
             setAlarms(devicesWithAlarm);
+        }
+    }, [devices])
+
+    useEffect(() => {
+        if (devices) {
+            const d = devices.map(device => {
+                device.roomName = calculateRoomNameOnDevice(device.name);
+                return device;
+            })
+            console.log(d);
+            const createdRooms = createRooms(d);
+            setRooms(createdRooms);
         }
     }, [devices])
 

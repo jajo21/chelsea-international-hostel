@@ -4,7 +4,7 @@
 
     .navbar {
         background: #9B9999;
-        padding: 10px 0 0 0;
+        padding: 14px 0 4px 0;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -23,15 +23,16 @@
         cursor: pointer;
     }
 
-    .nav-item a {
-        text-decoration: none;
-        font-size: 25px;
+    .navbar-item:hover, .logout_btn:hover {
+        cursor: pointer;
+        box-shadow: 3px 2px 6px #000000;
         transition: 0.2s all ease-out;
-        border-radius: 5px;
+        border-radius: 6px;
     }
-
-    .nav-item a:hover {
-        background: tomato;
+    .logout_btn {
+        border: none;
+        background-color: #9B9999;
+        font-size: 50px;
     }
 
     .sidebar active {
@@ -81,7 +82,7 @@
     }
 
     .sidebar-item1 {
-        margin-left: -10;
+        margin-left: -7;
         justify-content: center;
         list-style: none;
         font-weight: bold;
@@ -99,8 +100,9 @@
         
     }
 
-    .sidebar-item a:hover {
+    .sidebar-item a:hover, .sidebar-logout:hover  {
         transform: scale(1.2);
+        transition: all 0.2s ease-out;
     }
 
     .sidebar-logout {
@@ -109,8 +111,6 @@
         position: fixed;
         width: 138px;
         align-items: center;
-
     }
-
 
 }

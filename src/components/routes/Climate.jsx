@@ -30,15 +30,16 @@ function Climate() {
       </div>
       <div className="climate">
         <div className="rooms">
-
-          <div className="filter">
-            <div className="filter-text" >
-              {filter ? "Larmade Rum" : "Alla Rum"}
+          {rooms &&
+            <div className="filter">
+              <div className="filter-text" >
+                {filter ? "Larmade Rum" : "Alla Rum"}
+              </div>
+              <span title="Filter" className="filter-icon">
+                <FilterAltIcon fontSize="inherit" onClick={() => setFilter(!filter)} />
+              </span>
             </div>
-            <span title="Filter" className="filter-icon">
-              <FilterAltIcon fontSize="inherit" onClick={() => setFilter(!filter)} />
-            </span>
-          </div>
+          }
 
           {!rooms && <Loading size={"large"} />}
 

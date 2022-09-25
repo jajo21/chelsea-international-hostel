@@ -42,13 +42,19 @@
 .filter {
     font-size: 20px;
     justify-content: right;
-    margin-top: 10px;
     display: flex;
+}
+
+.filter-icon {
+    font-size: 25px;
 }
 
 .filter-icon:hover{
     cursor: pointer;
+    transform: scale(130%);
+    transition: all 0.2s ease-out;
 }
+
 @media only screen and (min-width: 550px) {
     .rednotis{
         font-size: 20px;
@@ -91,10 +97,10 @@
 
     .filter {
         width: 93%;
-        margin-bottom: 10px;
+        padding: 10px;
     }
     .filter-text {
-        font-size: 30px;
+        font-size: 25px;
     }
     .filter-icon {
         font-size: 30px;

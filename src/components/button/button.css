@@ -24,13 +24,10 @@
     border-radius: 5px;
     font-size: 18px;
     font-weight: bold;
-
 }
-
-.logout_btn {
-    border: none;
-    background-color: #9B9999;
-    font-size: 50px;
+.climatebtn:hover, .startBtn:hover {
+    transform: scale(110%);
+    transition: all 0.2s ease-out;
 }
 
 /* Desktop View */
@@ -52,12 +49,6 @@
         margin-left: auto;
         margin-right: auto;
         height: auto;
-    }
-
-    .logout_btn {
-        border: none;
-        background-color: #9B9999;
-        display: block;
     }
 
     .sidebar-btn {
