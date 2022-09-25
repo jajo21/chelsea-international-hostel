@@ -57,18 +57,18 @@
     }
 
     .sidebar {
-        
         padding: 0;
         height: 100%;
         width: 180px;
         overflow: auto;
         position: fixed;
+        top: 0;
         background-color: #9B9999;
         
     }
 
     .sidebar-items {
-        margin-top: 30;
+        margin-top: 90;
         font-size: 2vw;
         display: block;
         flex-direction: column;

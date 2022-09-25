@@ -19,7 +19,7 @@ function Climate() {
 
   return (
     <main>
-      <Notification alarms={alarms} />
+      {rooms && <Notification alarms={alarms} />}
       <div className="climate">
         <div className="rooms">
           {rooms && <Filter filter={filter} setFilter={setFilter} />}

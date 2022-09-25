@@ -1,5 +1,5 @@
 
-.rednotis {
+.red-notification {
     position: fixed;
     top: 0;
     display: flex;
@@ -11,7 +11,7 @@
     font-size: 14px;
 }
 
-.greennotis {
+.green-notification{
     position: fixed;
     top: 0;
     display: flex;
@@ -23,34 +23,33 @@
     font-size: 20px;
 }
 
-.greennotis span, .rednotis span {
+.green-notification span, .red-notification span {
     margin: 0 10px;
 }
 
 @media only screen and (min-width: 550px) {
-    .rednotis{
+    .red-notification{
         font-size: 20px;
     }
 }
 
-@media only screen and (min-width: 768px)
-{
+@media only screen and (min-width: 768px){
 
-    .rednotis{
-        height: 60px;
-        width: 100%;
-        font-size: 30px;
-    }
-    .greennotis {
-        height: 60px;
-        width: 100%;
-        font-size: 40px;
-        padding: 10px 0 ;
-    }
+.red-notification{
+    height: 60px;
+    width: 100%;
+    font-size: 30px;
+}
+.green-notification {
+    height: 60px;
+    width: 100%;
+    font-size: 40px;
+    padding: 10px 0 ;
+}
 }
 
 @media only screen and (min-width: 1030px) {
-    .rednotis {
+    .red-notification {
         font-size: 40px;
         padding: 10px 0 ;
     }

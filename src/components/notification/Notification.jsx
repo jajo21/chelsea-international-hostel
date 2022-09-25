@@ -7,7 +7,7 @@ import "./notification.css"
 
 function Notification({ alarms }) {
     return (
-        <div className={alarms.length === 0 ? "greennotis" : "rednotis"}>
+        <div className={alarms.length === 0 ? "green-notification" : "red-notification"}>
             <span>
                 {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
             </span>
