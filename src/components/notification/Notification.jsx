@@ -9,7 +9,7 @@ function Notification({ alarms }) {
     return (
         <div className={alarms.length === 0 ? "green-notification" : "red-notification"}>
             <span>
-                {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal sensorer som larmar: ${alarms.length}`}
+                {alarms.length === 0 ? `Allt är OK` : `VARNING LARM! Antal larm: ${alarms.length}`}
             </span>
             <span>
                 {alarms.length === 0 ? <SentimentSatisfiedAltIcon fontSize="inherit" /> : <SentimentVeryDissatisfiedIcon fontSize="inherit" />}
