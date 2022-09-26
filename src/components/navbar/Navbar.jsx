@@ -16,12 +16,6 @@ function Navbar() {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setMobile(true);
-    }
-  }, []);
-
-  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setMobile(true);
