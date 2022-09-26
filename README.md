@@ -16,7 +16,7 @@ Hotellet Chelsea International Hostel har påbörjat sin digitaliseringsprocess 
 ### Förbered och starta applikationen
 
 1. Ladda ner repot från https://github.com/jajo21/chelsea-international-hostel.
-2. Leta upp valfri terminal och utgå från nerladdad chelsea-international-hostel mapp och skriv:`npm ci ` nu laddas alla nödvändiga paket för att starta applikationen ner.
+2. Leta upp valfri terminal och utgå från nerladdad chelsea-international-hostel mapp och skriv: `npm ci` nu laddas alla nödvändiga paket för att starta applikationen ner.
 3. När alla paket har laddats klart skriver du i terminalen: `npm start` det här transpilerar koden via parcel och startar applikationen.
 4. Normalt ska applikationen öppnas i din webbläsare, om den inte gör det, öppna valfri webbläsare och navigera in på https://localhost:5001.
 
