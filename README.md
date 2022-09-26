@@ -40,14 +40,20 @@ För mer information om SmartHuts API och åtkomstpunkter gå in på [swagger](h
 
 Man kan tydligt se vilka externa bibliotek som är installerade i package.json. Men här kommer en mindre övergripande förklaring av de bibliotek som har betydelse för applikationen.
 
-### [Parcel](https://www.npmjs.com/package/parcel): Används för att sätta upp en utvecklingsmiljö med transpilering och bundling.
+### [Parcel](https://www.npmjs.com/package/parcel)
+Används för att sätta upp en utvecklingsmiljö med transpilering och bundling.
 
-### [React](https://www.npmjs.com/package/react) och [React-Dom](https://www.npmjs.com/package/react-dom): React är ett kodbibliotek som enkelt hjälper dig att skapa vy-lagret i en Single Page Applikation.
+### [React](https://www.npmjs.com/package/react) och [React-Dom](https://www.npmjs.com/package/react-dom)
+React är ett kodbibliotek som enkelt hjälper dig att skapa vy-lagret i en Single Page Applikation.
 
-### [React-Router-Dom](https://www.npmjs.com/package/react-router-dom): Är ett externt bibliotek som gör det möjligt för react-projekt att via komponenter deklarera olika delar av komponentträdet som olika webbresurser/sidor i webbläsarens historik.
+### [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
+Är ett externt bibliotek som gör det möjligt för react-projekt att via komponenter deklarera olika delar av komponentträdet som olika webbresurser/sidor i webbläsarens historik.
 
-### [@azure/msal-browser](https://www.npmjs.com/package/@azure/msal-browser): Är ett bibliotek som gör det möjligt att autentisera användare via Microsoft Authentication med JavaScript(MSAL.js).
+### [@azure/msal-browser](https://www.npmjs.com/package/@azure/msal-browser)
+Är ett bibliotek som gör det möjligt att autentisera användare via Microsoft Authentication med JavaScript(MSAL.js).
 
-### [@azure/msal-react](https://www.npmjs.com/package/@azure/msal-react): Liknande som ovan fast med andra funktioner specifikt för react.
+### [@azure/msal-react](https://www.npmjs.com/package/@azure/msal-react)
+Liknande som ovan fast med andra funktioner specifikt för react.
 
-### [@microsoft/signalr](https://www.npmjs.com/package/@microsoft/signalr): Ett paket som hjälper till att skapa kopplingen mot SignalR för att kunna ta emot realtidskommunikation.
+### [@microsoft/signalr](https://www.npmjs.com/package/@microsoft/signalr)
+Ett paket som hjälper till att skapa kopplingen mot SignalR för att kunna ta emot realtidskommunikation.
