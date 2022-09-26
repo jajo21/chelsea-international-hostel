@@ -28,7 +28,7 @@ Hotellet Chelsea International Hostel har påbörjat sin digitaliseringsprocess 
 
 _(Tryck på bilden för att göra den större)_
 
-<img src="./documentation/sekvensdiagram.png" width="600px">
+<img src="./documentation/sekvensdiagram.png" width="100%">
 
 Det här är en övergripande bild av hur kommunikationen i applikationen ser ut mot Microsoft Identity Platform, SmartHuts API samt SmartHuts realtidkommunikation.
 
