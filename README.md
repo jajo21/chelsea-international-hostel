@@ -22,7 +22,7 @@ Hotellet Chelsea International Hostel har påbörjat sin digitaliseringsprocess 
 
 ---
 
-## System arkitektur
+## Systemarkitektur
 
 ### Sekvensdiagram
 
