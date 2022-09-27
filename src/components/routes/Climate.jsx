@@ -10,7 +10,7 @@ import Notification from "../notification/Notification";
 import "./css/climate.css";
 
 function Climate() {
-  const { rooms, alarms, filter, setFilter } = useContext(DataContext);
+  const { rooms, alarms, filter, setFilter, error } = useContext(DataContext);
 
   let filteredRooms = null;
   if (filter) {
@@ -23,7 +23,8 @@ function Climate() {
       <div className="climate">
         <div className="rooms">
           {rooms && <Filter filter={filter} setFilter={setFilter} />}
-          {!rooms && <Loading size={"large"} />}
+          {!rooms && !error && <Loading size={"large"} />}
+          {error && <p>{error}</p>}
           {rooms && !filter &&
             rooms.map((room) => {
               return (

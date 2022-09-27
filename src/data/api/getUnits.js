@@ -1,10 +1,6 @@
-import { aquireToken } from "../auth/handleAuth";
-
 const smartHutEndpoint = "https://api.smarthut.se";
 
-export async function getUnits(instance, accounts) {
-    const accessToken = await aquireToken(instance, accounts);
-
+export async function getUnits(accessToken) {
     const headers = new Headers();
     const url = `${smartHutEndpoint}/Unit`
 
@@ -17,6 +13,14 @@ export async function getUnits(instance, accounts) {
     };
 
     return fetch(url, options)
-        .then(response => response.json())
-        .catch(error => console.log(error));
+        .then(async response => {
+            if (!response.ok) throw new Error(response.status)
+            const units = await response.json();
+            return [units, null];
+        })
+        .catch(err => {
+            console.error(err);
+            const error = "Något gick fel vid hämtning av sensorenheter från API:et, försök igen senare!";
+            return [null, error];
+        });
 }

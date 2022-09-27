@@ -8,6 +8,7 @@ import { callSmarthut } from "../data/signalr/negotiate";
 import { initializeSignalRConnection } from "../data/signalr/connectionSignalR";
 import { createRooms } from "../data/rooms/createRooms";
 import { calculateRoomNameOnDevice } from "../data/devices/handleDevices";
+import { isOptionGroup } from "@mui/base";
 
 const DataContext = createContext();
 
@@ -24,6 +25,8 @@ export function DataProvider({ children }) {
 
     const [filter, setFilter] = useState(false);
 
+    const [error, setError] = useState(null);
+
     useEffect(() => {
         if (isAuthenticated && connection === null) {
             callSmarthut(accounts[0].username).then((res) => {
@@ -37,13 +40,22 @@ export function DataProvider({ children }) {
     useEffect(() => {
         if (isAuthenticated) {
             const fetchData = async () => {
-                const accessToken = await aquireToken(instance, accounts);
-                const building = await getBuilding(accessToken);
-                const devices = await getBuildingDevices(accessToken, building.id);
-                const units = await getUnits(instance, accounts);
-                const unitsWithExplanation = addUnitExplanation(units);
-                setUnits(unitsWithExplanation);
-                setDevices(devices);
+                try {
+                    const [accessToken, tokenError] = await aquireToken(instance, accounts);
+                    if (tokenError) throw new Error(tokenError)
+                    const [building, buildingError] = await getBuilding(accessToken);
+                    if (buildingError) throw new Error(buildingError);
+                    const [devices, devicesError] = await getBuildingDevices(accessToken, building.id);
+                    if (devicesError) throw new Error(devicesError);
+                    const [units, unitsError] = await getUnits(accessToken);
+                    if (unitsError) throw new Error(unitsError);
+                    const unitsWithExplanation = addUnitExplanation(units);
+                    setUnits(unitsWithExplanation);
+                    setDevices(devices);
+
+                } catch (error) {
+                    setError(error.message);
+                }
             }
             fetchData();
         }
@@ -121,6 +133,7 @@ export function DataProvider({ children }) {
                 rooms,
                 alarms,
                 filter,
+                error,
                 setFilter,
             }}>
             {children}
