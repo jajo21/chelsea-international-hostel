@@ -13,8 +13,16 @@ export async function getBuilding(accessToken) {
     };
 
     return fetch(url, options)
-        .then(response => response.json())
-        .catch(error => console.log(error));
+        .then(async response => {
+            if (!response.ok) throw new Error(response.status)
+            const building = await response.json();
+            return [building, null];
+        })
+        .catch(err => {
+            console.error(err);
+            const error = "Något gick fel vid hämtning av byggnad från API:et, försök igen senare!";
+            return [null, error];
+        });
 }
 
 export async function getBuildingDevices(accessToken, buildingId) {
@@ -30,7 +38,15 @@ export async function getBuildingDevices(accessToken, buildingId) {
     };
 
     return fetch(url, options)
-        .then(response => response.json())
-        .then(res => res.devices)
-        .catch(error => console.log(error));
+        .then(async response => {
+            if (!response.ok) throw new Error(response.status)
+            const building = await response.json()
+            const devices = building.devices;
+            return [devices, null];
+        })
+        .catch(err => {
+            console.error(err);
+            const error = "Något gick fel vid hämtning av byggnad och sensorer från API:et, försök igen senare!";
+            return [null, error];
+        });
 }
