@@ -8,7 +8,6 @@ import { callSmarthut } from "../data/signalr/negotiate";
 import { initializeSignalRConnection } from "../data/signalr/connectionSignalR";
 import { createRooms } from "../data/rooms/createRooms";
 import { calculateRoomNameOnDevice } from "../data/devices/handleDevices";
-import { isOptionGroup } from "@mui/base";
 
 const DataContext = createContext();
 
