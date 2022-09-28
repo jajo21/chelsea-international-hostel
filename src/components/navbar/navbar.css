@@ -41,7 +41,7 @@
     }
 
     .sidebar {
-        visibility: hidden;
+        display: none !important;
     }
 
 }
