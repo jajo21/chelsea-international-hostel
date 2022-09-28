@@ -76,7 +76,7 @@ export function DataProvider({ children }) {
                                     device.alarm = false;
                                 }
                                 if (telemetry.deviceId === device.id.toUpperCase()) {
-                                    device.value = telemetry.value + 1;
+                                    device.value = telemetry.value;
                                     if (!device.alarm && device.value > device.maxValue || !device.alarm && device.value < device.minValue) {
                                         device.alarm = true;
                                         device.alarmValue = device.value;
