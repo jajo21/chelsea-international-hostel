@@ -69,13 +69,17 @@ export function DataProvider({ children }) {
                         devicesWithTelemetry.map(device => {
                             device.roomName = calculateRoomNameOnDevice(device.name);
                             return telemetryArray.map(telemetry => {
+                                if (device.alarmValue === undefined) {
+                                    device.alarmValue = null;
+                                }
                                 if (device.alarm === undefined) {
                                     device.alarm = false;
                                 }
                                 if (telemetry.deviceId === device.id.toUpperCase()) {
-                                    device.value = telemetry.value;
-                                    if (device.value > device.maxValue || device.value < device.minValue) {
+                                    device.value = telemetry.value + 1;
+                                    if (!device.alarm && device.value > device.maxValue || !device.alarm && device.value < device.minValue) {
                                         device.alarm = true;
+                                        device.alarmValue = device.value;
                                     }
 
                                     return devicesWithTelemetry;
@@ -96,6 +100,7 @@ export function DataProvider({ children }) {
                         const resetDevices = devices.map(device => {
                             if (device.id === alarmNeutralizedId) {
                                 device.alarm = false;
+                                device.alarmValue = null;
                             }
                             return device
                         })

@@ -20,6 +20,7 @@ function Room({ name, devices }) {
                             <Device
                                 key={device.id}
                                 alarm={device.alarm}
+                                alarmValue={device.alarmValue}
                                 unitId={device.unitId}
                                 telemetryValue={device.value}
                             />
