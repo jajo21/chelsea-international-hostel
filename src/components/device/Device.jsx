@@ -3,7 +3,7 @@ import DataContext from "../../contexts/DataContext";
 import Loading from "../loading/Loading";
 import "./device.css";
 
-function Device({ unitId, alarm, telemetryValue }) {
+function Device({ unitId, alarm, telemetryValue, alarmValue }) {
     const { units } = useContext(DataContext);
     const unit = units.find(unit => unit.id === unitId);
 
@@ -11,7 +11,7 @@ function Device({ unitId, alarm, telemetryValue }) {
         <div className={alarm ? "alarmActive" : "alarmOk"}>
             {telemetryValue
                 ?
-                <p>{unit.explanation} {alarm ? <span>Alarm</span> : <span>OK</span>} {telemetryValue.toFixed(1)} {unit.unit}</p>
+                <p>{unit.explanation} {alarm ? <span>ALARM</span> : <span>OK</span>} {alarmValue ? alarmValue.toFixed(1) : telemetryValue.toFixed(1)} {unit.unit}</p>
                 :
                 <Loading size={"small"} />
             }
