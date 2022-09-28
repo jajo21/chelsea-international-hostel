@@ -9,9 +9,6 @@ function Start() {
   const { instance } = useMsal();
   return (
     <main>
-
-      <div className="space"></div>
-
       <div className="start-wrapper">
         <img className="startLogo" src={logo} />
         <br />
