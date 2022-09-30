@@ -28,11 +28,7 @@ function Climate() {
           {rooms && !filter &&
             rooms.map((room) => {
               return (
-                <Room
-                  key={room.id}
-                  name={room.name}
-                  devices={room.devices}
-                />
+                <Room key={room.id} name={room.name} devices={room.devices} />
               );
             })
           }
