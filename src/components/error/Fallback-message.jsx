@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './fallback-message.css';
 
@@ -29,9 +28,4 @@ export default class FallbackMessage extends React.Component {
       </div>
     )
   }
-}
-
-FallbackMessage.propTypes = {
-  error: PropTypes.object,
-  handleHasError: PropTypes.func
 }
