@@ -57,3 +57,29 @@ Liknande som ovan fast med andra funktioner specifikt för react.
 
 ### [@microsoft/signalr](https://www.npmjs.com/package/@microsoft/signalr)
 Ett paket som hjälper till att skapa kopplingen mot SignalR för att kunna ta emot realtidskommunikation.
+
+## Syfte - YH-utbildning: Webbutvecklare .NET
+
+- Inlämningsuppgift i kursen Webbapplikationer med realtidskommunikation - Maj 2022
+- Gruppuppgift Webbutvecklare.NET. Hotellet Chelsea International Hostel har påbörjat sin digitaliseringsprocess med hjälp av SmartHuts smarta sensorer som kan mäta exempelvis värme och luftfuktighet. Nu vill de ha hjälp att skapa ett användargränssnitt för att kunna styra sina smarta sensorer. Här ska vi arbeta i grupp och leverera en produkt till en fiktiv VD.
+- Resultat: 100/100 (G)
+
+## Tekniker
+
+- React.js
+- Fetch-API
+- WebSockets
+- microsoft-signalr
+- msal-react
+- msal-browser
+- Parcel
+- HTML
+- CSS
+
+## Kravspecifikation och uppgiftsbeskrivning
+
+Uppgiften går ut på att vi får en vag bakgrund av vad ett hotell behöver för digitalisering av sina smarta mätare. Nu är det gruppens uppgift att lösa det här problemet. Vi fick under kursens gång ha korta möten tillsammans med VD för att landa i och komma överens om en kravspecifikation för hela produkten. Under kursens veckor har det funnits olika delmål och leveranser av förstudie, planering & design tillsammans med lägesrapporter & presentationer.  
+
+Här får ni ett smakprov av förstudien: 
+[Förstudie Chelsea International Hostel - Johannes, Louice, Emil.pdf](https://github.com/jajo21/chelsea-international-hostel/files/10164404/Forstudie.Chelsea.International.Hostel.-.Johannes.Louice.Emil.pdf)
+
