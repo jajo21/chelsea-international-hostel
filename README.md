@@ -1,4 +1,4 @@
-# Chelsea-international-hostel
+# Chelsea-international-hostel - September 2022
 
 Hotellet Chelsea International Hostel har påbörjat sin digitaliseringsprocess med hjälp av SmartHuts smarta sensorer som kan mäta exempelvis värme och luftfuktighet. Nu vill de ha hjälp att skapa ett användargränssnitt för att kunna styra sina smarta sensorer. Här är nuvarande resultat.
 
@@ -60,7 +60,7 @@ Ett paket som hjälper till att skapa kopplingen mot SignalR för att kunna ta e
 
 ## Syfte - YH-utbildning: Webbutvecklare .NET
 
-- Inlämningsuppgift i kursen Webbapplikationer med realtidskommunikation - Maj 2022
+- Inlämningsuppgift i kursen Webbapplikationer med realtidskommunikation - September 2022
 - Gruppuppgift Webbutvecklare.NET. Hotellet Chelsea International Hostel har påbörjat sin digitaliseringsprocess med hjälp av SmartHuts smarta sensorer som kan mäta exempelvis värme och luftfuktighet. Nu vill de ha hjälp att skapa ett användargränssnitt för att kunna styra sina smarta sensorer. Här ska vi arbeta i grupp och leverera en produkt till en fiktiv VD.
 - Resultat: 100/100 (G)
 
